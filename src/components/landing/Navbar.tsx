@@ -30,13 +30,13 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-xs font-bold text-slate-600">
-          <a href="#features" className="hover:text-[#00897b] transition-colors">
+          <a href="#features" className="hover:text-slate-900 transition-colors">
             Features
           </a>
-          <a href="#showcase" className="hover:text-[#00897b] transition-colors">
+          <a href="#showcase" className="hover:text-slate-900 transition-colors">
             Product Showcase
           </a>
-          <a href="#interactive" className="hover:text-[#00897b] transition-colors">
+          <a href="#interactive" className="hover:text-slate-900 transition-colors">
             Live Demo
           </a>
         </nav>
@@ -44,9 +44,9 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/chat"
-            className="inline-flex items-center gap-2 text-xs font-extrabold text-white bg-[#00897b] hover:bg-[#00796b] px-4.5 py-2.5 rounded-xl shadow-md shadow-[#00897b]/25 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 text-xs font-extrabold text-slate-900 bg-[#88E788] hover:bg-[#73db73] px-4.5 py-2.5 rounded-xl shadow-md shadow-[#88E788]/25 transition-all hover:scale-105"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>Open Chat App</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>

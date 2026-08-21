@@ -8,11 +8,12 @@ export function getInitials(name?: string): string {
 }
 
 const AVATAR_COLORS = [
-  'bg-[#00897b] text-white',
-  'bg-[#00796b] text-white',
-  'bg-teal-600 text-white',
-  'bg-[#004d40] text-white',
+  'bg-[#88E788] text-slate-900',
   'bg-emerald-600 text-white',
+  'bg-teal-600 text-white',
+  'bg-slate-700 text-white',
+  'bg-[#6cd86c] text-slate-900',
+  'bg-emerald-700 text-white',
 ];
 
 export function getAvatarColor(seed?: string): string {

@@ -57,7 +57,7 @@ export function MessageItem({
           className={cn(
             'px-3.5 py-2 rounded-2xl text-xs sm:text-sm leading-relaxed break-words shadow-2xs relative border',
             isSelf
-              ? 'bg-[#00897b] border-[#00796b] text-white font-medium rounded-br-xs'
+              ? 'bg-[#88E788] border-[#6cd86c] text-slate-900 font-medium rounded-br-xs'
               : 'bg-slate-100 border-slate-200 text-slate-900 rounded-bl-xs'
           )}
         >
@@ -65,8 +65,8 @@ export function MessageItem({
 
           <div
             className={cn(
-              'text-[9px] mt-1 font-semibold tracking-tight text-right opacity-80',
-              isSelf ? 'text-white' : 'text-slate-500'
+              'text-[9px] mt-1 font-semibold tracking-tight text-right opacity-70',
+              isSelf ? 'text-slate-900' : 'text-slate-500'
             )}
           >
             {formatMessageTime(message.createdAt)}

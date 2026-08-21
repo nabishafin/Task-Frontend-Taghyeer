@@ -49,7 +49,7 @@ export function ConversationItem({
       className={cn(
         'w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all border',
         isActive
-          ? 'bg-[#00897b]/15 border-[#00897b]/50 text-slate-900 font-semibold shadow-2xs'
+          ? 'bg-[#88E788]/25 border-[#88E788]/60 text-slate-900 font-semibold shadow-2xs'
           : 'bg-white border-transparent hover:bg-slate-100/80 text-slate-800'
       )}
     >
@@ -88,7 +88,7 @@ export function ConversationItem({
           </p>
 
           {unreadCount > 0 && (
-            <span className="shrink-0 ml-2 bg-[#00897b] text-white text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-[#00796b]">
+            <span className="shrink-0 ml-2 bg-[#88E788] text-slate-900 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-[#6cd86c]">
               {unreadCount > 99 ? '99+' : unreadCount}
             </span>
           )}

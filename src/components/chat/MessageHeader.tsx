@@ -66,7 +66,7 @@ export function MessageHeader() {
         {isGroup && (
           <button
             onClick={() => dispatch(setIsGroupManageOpen(true))}
-            className="p-2 rounded-xl text-slate-500 hover:text-[#00897b] hover:bg-[#00897b]/15 transition-colors"
+            className="p-2 rounded-xl text-slate-500 hover:text-[#2d8a2d] hover:bg-[#88E788]/20 transition-colors"
             title="Group Settings"
           >
             <Settings className="w-4 h-4" />

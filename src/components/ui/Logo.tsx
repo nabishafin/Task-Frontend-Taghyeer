@@ -38,19 +38,19 @@ export function Logo({
         className={cn(
           'relative rounded-2xl flex items-center justify-center font-bold shadow-md transition-all duration-300 group-hover:scale-105 shrink-0 overflow-hidden',
           iconSizes[size],
-          'bg-gradient-to-br from-[#00897b] to-[#00796b] text-white border border-[#00897b]/40 shadow-[#00897b]/30'
+          'bg-gradient-to-br from-[#88E788] to-[#6cd86c] text-slate-900 border border-[#88E788]/60 shadow-[#88E788]/30'
         )}
       >
         {/* Ambient Glow */}
-        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity" />
         
         {/* Custom Signal Wave Pulse SVG Icon */}
         <svg
-          className="w-3/5 h-3/5 fill-current relative z-10 text-white"
+          className="w-3/5 h-3/5 fill-current relative z-10 text-slate-900"
           viewBox="0 0 24 24"
         >
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z" />
-          <circle cx="12" cy="12" r="3" className="animate-ping opacity-40 fill-white" />
+          <circle cx="12" cy="12" r="3" className="animate-ping opacity-40 fill-slate-900" />
         </svg>
       </div>
 
@@ -63,7 +63,7 @@ export function Logo({
           )}
         >
           Pulse
-          <span className="text-[#00897b] font-extrabold ml-0.5 animate-pulse">.</span>
+          <span className="text-[#2d8a2d] font-extrabold ml-0.5 animate-pulse">.</span>
         </span>
       )}
     </div>

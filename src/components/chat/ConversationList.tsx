@@ -53,7 +53,7 @@ export function ConversationList() {
             placeholder="Search conversations..."
             value={localSearch}
             onChange={(e) => setLocalSearch(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#00897b]"
+            className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#88E788]"
           />
         </div>
 
@@ -108,7 +108,7 @@ export function ConversationList() {
             <div className="flex items-center gap-2 pt-1">
               <button
                 onClick={() => dispatch(setIsSearchOpen(true))}
-                className="inline-flex items-center gap-1 text-xs font-bold bg-[#00897b] hover:bg-[#00796b] text-white px-3 py-1.5 rounded-lg transition-all shadow-2xs"
+                className="inline-flex items-center gap-1 text-xs font-bold bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs"
               >
                 <UserPlus className="w-3.5 h-3.5" /> Start Chat
               </button>

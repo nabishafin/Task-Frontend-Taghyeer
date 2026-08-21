@@ -33,7 +33,7 @@ export function SidebarHeader() {
             <p className="text-[11px] text-slate-500 truncate flex items-center gap-1.5 mt-0.5">
               <span className="truncate">{user?.phone}</span>
               {socketConnected ? (
-                <span className="inline-flex items-center gap-1 text-[9px] font-extrabold text-[#00897b] bg-[#00897b]/15 px-1.5 py-0.2 rounded border border-[#00897b]/30">
+                <span className="inline-flex items-center gap-1 text-[9px] font-extrabold text-[#2d8a2d] bg-[#88E788]/30 px-1.5 py-0.2 rounded border border-[#88E788]/50">
                   <Wifi className="w-2.5 h-2.5" /> Live
                 </span>
               ) : (
@@ -57,7 +57,7 @@ export function SidebarHeader() {
           <button
             onClick={() => dispatch(setIsGroupModalOpen(true))}
             title="Create Group"
-            className="p-2 rounded-xl text-slate-600 hover:text-[#00897b] hover:bg-[#00897b]/15 transition-colors"
+            className="p-2 rounded-xl text-slate-600 hover:text-[#2d8a2d] hover:bg-[#88E788]/20 transition-colors"
           >
             <Users className="w-4 h-4" />
           </button>

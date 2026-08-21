@@ -13,8 +13,8 @@ export function Showcase() {
     <section id="showcase" className="py-24 bg-white text-slate-900 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00897b]/15 border border-[#00897b]/40 text-[#00897b] text-xs font-bold shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#00897b]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#88E788]/25 border border-[#88E788]/50 text-slate-900 text-xs font-bold shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>High Fidelity Product Showcase</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -29,7 +29,7 @@ export function Showcase() {
               onClick={() => setActiveTab('direct')}
               className={`flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'direct'
-                  ? 'bg-[#00897b] text-white shadow-md'
+                  ? 'bg-[#88E788] text-slate-900 shadow-md border border-[#6cd86c]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -40,7 +40,7 @@ export function Showcase() {
               onClick={() => setActiveTab('group')}
               className={`flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'group'
-                  ? 'bg-[#00897b] text-white shadow-md'
+                  ? 'bg-[#88E788] text-slate-900 shadow-md border border-[#6cd86c]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -62,7 +62,7 @@ export function Showcase() {
             <div className="px-4 py-1 rounded-lg bg-white border border-slate-200 text-slate-500 font-mono text-[11px] flex items-center gap-2">
               <span>https://pulse-chat.app/chat</span>
             </div>
-            <Link href="/chat" className="text-xs text-[#00897b] hover:underline font-bold flex items-center gap-1">
+            <Link href="/chat" className="text-xs text-[#2d8a2d] hover:underline font-bold flex items-center gap-1">
               <span>Launch</span>
               <ExternalLink className="w-3 h-3" />
             </Link>
@@ -76,13 +76,13 @@ export function Showcase() {
                   <Avatar name="Ada Lovelace" seed="ada" size="sm" isOnline />
                   <div>
                     <h5 className="text-xs font-bold text-slate-900">Ada Lovelace</h5>
-                    <p className="text-[10px] text-[#00897b] font-semibold">Online</p>
+                    <p className="text-[10px] text-[#2d8a2d] font-semibold">Online</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-1.5 pt-1">
-                <div className={`p-3 rounded-2xl border flex items-center gap-3 transition-all ${activeTab === 'direct' ? 'bg-[#00897b]/15 border-[#00897b] shadow-2xs' : 'bg-white border-slate-200'}`}>
+                <div className={`p-3 rounded-2xl border flex items-center gap-3 transition-all ${activeTab === 'direct' ? 'bg-[#88E788]/25 border-[#88E788] shadow-2xs' : 'bg-white border-slate-200'}`}>
                   <Avatar name="Alan Turing" seed="alan" size="sm" isOnline />
                   <div className="flex-1 min-w-0">
                     <h6 className="text-xs font-bold text-slate-900">Alan Turing</h6>
@@ -90,11 +90,11 @@ export function Showcase() {
                   </div>
                 </div>
 
-                <div className={`p-3 rounded-2xl border flex items-center gap-3 transition-all ${activeTab === 'group' ? 'bg-[#00897b]/15 border-[#00897b] shadow-2xs' : 'bg-white border-slate-200'}`}>
+                <div className={`p-3 rounded-2xl border flex items-center gap-3 transition-all ${activeTab === 'group' ? 'bg-[#88E788]/25 border-[#88E788] shadow-2xs' : 'bg-white border-slate-200'}`}>
                   <Avatar name="Pioneers Team" seed="pioneers" size="sm" isGroup />
                   <div className="flex-1 min-w-0">
                     <h6 className="text-xs font-bold text-slate-900 flex items-center gap-1">
-                      Pioneers Team <Badge variant="accent" size="sm" className="bg-[#00897b]/20 text-[#00897b] border-[#00897b]/40 text-[8px] py-0">Group</Badge>
+                      Pioneers Team <Badge variant="accent" size="sm" className="bg-[#88E788]/30 text-slate-900 border-[#88E788]/60 text-[8px] py-0">Group</Badge>
                     </h6>
                     <p className="text-[10px] text-slate-500 truncate">Grace: Sprint meeting at 3 PM</p>
                   </div>
@@ -134,9 +134,9 @@ export function Showcase() {
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
-                      <div className="bg-[#00897b] text-white font-medium px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
+                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-medium px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
                         Yes! Socket.io events stream instantly with zero latency.
-                        <span className="block text-[9px] text-white mt-1 opacity-80">10:33 AM</span>
+                        <span className="block text-[9px] text-slate-900 mt-1 opacity-80">10:33 AM</span>
                       </div>
                     </div>
                   </>
@@ -150,9 +150,9 @@ export function Showcase() {
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
-                      <div className="bg-[#00897b] text-white font-medium px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
+                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-medium px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
                         Promoted Alan to admin as well! 🚀
-                        <span className="block text-[9px] text-white mt-1 opacity-80">10:35 AM</span>
+                        <span className="block text-[9px] text-slate-900 mt-1 opacity-80">10:35 AM</span>
                       </div>
                     </div>
                   </>
@@ -166,7 +166,7 @@ export function Showcase() {
                   value="Write a message..."
                   className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-400 focus:outline-none"
                 />
-                <Link href="/chat" className="p-2.5 rounded-xl bg-[#00897b] hover:bg-[#00796b] text-white font-bold shadow-2xs transition-colors">
+                <Link href="/chat" className="p-2.5 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 font-bold shadow-2xs transition-colors">
                   <Send className="w-4 h-4" />
                 </Link>
               </div>

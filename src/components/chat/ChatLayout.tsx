@@ -22,7 +22,7 @@ export function ChatLayout() {
   const activeId = useSelector((state: RootState) => state.chat.activeConversationId);
 
   return (
-    <div className="h-screen w-screen bg-slate-100 text-slate-900 flex overflow-hidden selection:bg-[#00897b] selection:text-white">
+    <div className="h-screen w-screen bg-slate-100 text-slate-900 flex overflow-hidden selection:bg-[#88E788] selection:text-slate-900">
       <div
         className={cn(
           'w-full md:w-80 lg:w-96 border-r border-slate-200 flex flex-col h-full shrink-0 bg-white transition-all duration-300',
@@ -60,7 +60,7 @@ export function ChatLayout() {
             <div className="flex items-center gap-3 pt-2">
               <button
                 onClick={() => dispatch(setIsSearchOpen(true))}
-                className="inline-flex items-center gap-2 text-xs font-bold bg-[#00897b] hover:bg-[#00796b] text-white px-4 py-2.5 rounded-xl shadow-xs transition-all"
+                className="inline-flex items-center gap-2 text-xs font-bold bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-4 py-2.5 rounded-xl shadow-xs transition-all"
               >
                 <UserPlus className="w-4 h-4" />
                 <span>Start Direct Chat</span>
@@ -69,7 +69,7 @@ export function ChatLayout() {
                 onClick={() => dispatch(setIsGroupModalOpen(true))}
                 className="inline-flex items-center gap-2 text-xs font-bold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl shadow-xs transition-all"
               >
-                <Users className="w-4 h-4 text-[#00897b]" />
+                <Users className="w-4 h-4 text-[#2d8a2d]" />
                 <span>Create Group</span>
               </button>
             </div>

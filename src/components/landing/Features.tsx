@@ -49,8 +49,8 @@ export function Features() {
     <section id="features" className="py-24 bg-slate-50 text-slate-900 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00897b]/15 border border-[#00897b]/40 text-[#00897b] text-xs font-bold shadow-2xs">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#00897b]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#88E788]/25 border border-[#88E788]/50 text-slate-900 text-xs font-bold shadow-2xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>Built for Modern Real-Time Web</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -67,12 +67,12 @@ export function Features() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-[#00897b] transition-all duration-300 group"
+                className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-[#88E788] transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#00897b]/15 border border-[#00897b]/30 flex items-center justify-center text-[#00897b] mb-5 group-hover:scale-110 group-hover:bg-[#00897b] group-hover:text-white transition-all shadow-2xs">
+                <div className="w-12 h-12 rounded-2xl bg-[#88E788]/30 border border-[#88E788] flex items-center justify-center text-[#2d8a2d] mb-5 group-hover:scale-110 group-hover:bg-[#88E788] group-hover:text-slate-900 transition-all shadow-2xs">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#00897b] transition-colors">
+                <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#2d8a2d] transition-colors">
                   {feat.title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed font-normal">

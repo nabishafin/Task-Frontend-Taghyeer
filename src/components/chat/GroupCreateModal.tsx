@@ -117,7 +117,7 @@ export function GroupCreateModal() {
               setGroupName(e.target.value);
               setValidationError(null);
             }}
-            className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00897b]"
+            className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788]"
             required
           />
         </div>
@@ -139,14 +139,14 @@ export function GroupCreateModal() {
               {selectedUsers.map((u) => (
                 <div
                   key={u._id}
-                  className="inline-flex items-center gap-1.5 bg-[#00897b]/15 text-[#00897b] border border-[#00897b]/40 px-2 py-0.5 rounded-lg text-xs font-bold"
+                  className="inline-flex items-center gap-1.5 bg-[#88E788]/30 text-slate-900 border border-[#88E788] px-2 py-0.5 rounded-lg text-xs font-bold"
                 >
                   <Avatar name={u.name} seed={u._id} size="sm" className="w-4 h-4 text-[8px]" />
                   <span>{u.name}</span>
                   <button
                     type="button"
                     onClick={() => removeUser(u._id)}
-                    className="p-0.5 hover:bg-[#00897b]/30 rounded transition-colors text-[#00897b]"
+                    className="p-0.5 hover:bg-[#88E788]/60 rounded transition-colors text-slate-700 hover:text-slate-900"
                   >
                     <X className="w-3 h-3" />
                   </button>
@@ -167,7 +167,7 @@ export function GroupCreateModal() {
               placeholder="Search by name or phone..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#00897b]"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#88E788]"
             />
           </div>
 
@@ -197,7 +197,7 @@ export function GroupCreateModal() {
                   </div>
                   <button
                     type="button"
-                    className="p-1 rounded-lg bg-[#00897b] text-white hover:bg-[#00796b] transition-all text-xs font-bold px-2 flex items-center gap-0.5"
+                    className="p-1 rounded-lg bg-[#88E788] text-slate-900 hover:bg-[#73db73] transition-all text-xs font-bold px-2 flex items-center gap-0.5"
                   >
                     <Plus className="w-3.5 h-3.5" /> Add
                   </button>
@@ -218,7 +218,7 @@ export function GroupCreateModal() {
           <button
             type="submit"
             disabled={isCreating || selectedUsers.length < 2 || !groupName.trim()}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#00897b] hover:bg-[#00796b] text-white text-xs font-bold shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 text-xs font-bold shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             {isCreating ? (
               <>

@@ -17,9 +17,9 @@ export function Badge({
   className,
 }: BadgeProps) {
   const variantClasses = {
-    primary: 'bg-[#00897b]/15 text-[#00897b] border-[#00897b]/30',
+    primary: 'bg-[#88E788]/25 text-slate-900 border-[#88E788]/50',
     secondary: 'bg-slate-100 text-slate-700 border-slate-200',
-    accent: 'bg-[#00897b] text-white border-[#00796b] font-bold',
+    accent: 'bg-[#88E788] text-slate-900 border-[#6cd86c] font-bold',
     outline: 'border-slate-300 text-slate-600',
   };
 
