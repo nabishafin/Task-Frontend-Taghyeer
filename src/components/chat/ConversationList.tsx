@@ -19,7 +19,10 @@ export function ConversationList() {
   const [filter, setFilter] = useState<'all' | 'direct' | 'group'>('all');
   const [localSearch, setLocalSearch] = useState('');
 
-  const { data, isLoading, isError, error, refetch } = useGetConversationsQuery();
+  const token = useSelector((state: RootState) => state.auth.token);
+  const { data, isLoading, isError, error, refetch } = useGetConversationsQuery(undefined, {
+    skip: !token,
+  });
 
   const conversations = data?.data || [];
 

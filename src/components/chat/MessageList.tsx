@@ -16,13 +16,14 @@ export function MessageList() {
   const activeId = useSelector((state: RootState) => state.chat.activeConversationId);
   const currentUser = useSelector((state: RootState) => state.auth.user);
 
-  const { data: convData } = useGetConversationsQuery();
+  const token = useSelector((state: RootState) => state.auth.token);
+  const { data: convData } = useGetConversationsQuery(undefined, { skip: !token });
   const currentConv = convData?.data.find((c) => c._id === activeId);
   const isGroup = currentConv?.type === 'group';
 
   const { data, isLoading, isError, error, refetch } = useGetMessagesQuery(
     { id: activeId || '' },
-    { skip: !activeId }
+    { skip: !token || !activeId }
   );
 
   const messages = useMemo(() => {
