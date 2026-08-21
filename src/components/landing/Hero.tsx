@@ -16,10 +16,10 @@ export function Hero() {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Centered Header & Headline */}
-        <div className="text-center max-w-4xl mx-auto space-y-6">
+        <div className="text-center max-w-3xl mx-auto space-y-6">
           
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#88E788] text-slate-900 text-xs font-bold shadow-md shadow-[#88E788]/20 backdrop-blur-md animate-in fade-in duration-300">

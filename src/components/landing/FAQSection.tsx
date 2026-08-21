@@ -45,7 +45,7 @@ export function FAQSection() {
 
   return (
     <section className="py-24 bg-white text-slate-900 border-b border-slate-200/80 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 mb-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold uppercase tracking-wide shadow-2xs">
             <HelpCircle className="w-3.5 h-3.5 text-[#2d8a2d]" />
@@ -60,7 +60,7 @@ export function FAQSection() {
         </div>
 
         {/* Clean Divider Accordion Rows Without Card Boxes */}
-        <div className="max-w-4xl mx-auto divide-y divide-slate-200/80 border-t border-b border-slate-200/80">
+        <div className="max-w-6xl mx-auto divide-y divide-slate-200/80 border-t border-b border-slate-200/80">
           {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (

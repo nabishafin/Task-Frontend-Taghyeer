@@ -76,7 +76,7 @@ export function InteractiveDemo() {
       {/* Subtle ambient lighting behind sandbox */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[#88E788]/20 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold uppercase tracking-wide shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
@@ -91,7 +91,7 @@ export function InteractiveDemo() {
         </div>
 
         {/* Integrated Sandbox Display */}
-        <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-slate-900/10 space-y-5">
+        <div className="max-w-6xl mx-auto bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-slate-900/10 space-y-5">
           <div className="flex flex-wrap gap-2 pb-4 border-b border-slate-100">
             {PRESET_QUESTIONS.map((q, idx) => (
               <button

@@ -25,7 +25,7 @@ const HIGHLIGHTS = [
 export function SecuritySection() {
   return (
     <section className="py-24 bg-slate-50/50 text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Integrated Preview Graphic */}
           <div className="lg:col-span-6">
