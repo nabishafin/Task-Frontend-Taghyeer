@@ -32,14 +32,6 @@ export function Hero() {
         {/* Top Centered Header & Compact Headline */}
         <div className="text-center max-w-2xl mx-auto space-y-3.5">
           
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 border border-[#88E788] text-slate-900 text-xs font-mono font-bold shadow-xs backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#2d8a2d] animate-ping shrink-0" />
-            <span className="text-[#2d8a2d] tracking-wider uppercase text-[10px]">Real-Time Socket.io Messenger</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-slate-600 font-semibold text-[10px]">Sub-10ms Latency</span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
             Conversations that{' '}
