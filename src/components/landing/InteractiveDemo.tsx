@@ -22,7 +22,7 @@ export function InteractiveDemo() {
       id: '1',
       sender: 'bot',
       text: 'Hi there! 👋 I am the Pulse Assistant. Ask me anything about Pulse chat app features!',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: '10:00 AM',
     },
   ]);
 

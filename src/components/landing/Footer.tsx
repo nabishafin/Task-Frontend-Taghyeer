@@ -17,7 +17,9 @@ export function Footer() {
           </span>
         </div>
 
-        <p>© {new Date().getFullYear()} Pulse Chat Application. Built with Next.js, Redux Toolkit & Socket.io.</p>
+        <p suppressHydrationWarning>
+          © {new Date().getFullYear()} Pulse Chat Application. Built with Next.js, Redux Toolkit & Socket.io.
+        </p>
 
         <div className="flex items-center gap-5 font-semibold text-slate-600">
           <Link href="/login" className="hover:text-slate-900 transition-colors">
