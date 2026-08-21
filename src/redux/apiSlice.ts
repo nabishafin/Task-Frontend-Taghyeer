@@ -22,9 +22,11 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: API_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
-      const token = (getState() as RootState).auth.token ||
-        (typeof window !== 'undefined' ? localStorage.getItem('pulse_auth_token') : null);
-      if (token) {
+      let token = (getState() as RootState).auth.token;
+      if (!token && typeof window !== 'undefined') {
+        token = localStorage.getItem('pulse_auth_token');
+      }
+      if (token && token !== 'null' && token !== 'undefined' && token.trim() !== '') {
         headers.set('Authorization', `Bearer ${token}`);
       }
       return headers;

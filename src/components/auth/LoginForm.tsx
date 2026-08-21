@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLoginMutation } from '@/redux/apiSlice';
 import { setCredentials } from '@/redux/authSlice';
 import { RootState } from '@/redux/store';
 import { ApiError } from '@/types/chat';
 import { Logo } from '@/components/ui/Logo';
-import { Phone, User as UserIcon, ArrowRight, Loader2, AlertCircle, Sparkles, ShieldCheck, ChevronDown } from 'lucide-react';
+import { Phone, User as UserIcon, ArrowRight, ArrowLeft, Loader2, AlertCircle, Sparkles, ShieldCheck, ChevronDown } from 'lucide-react';
 
 interface Country {
   code: string;
@@ -115,11 +116,24 @@ export function LoginForm() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-[#88E788]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#88E788]/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-md space-y-6 relative z-10">
+      {/* Top Left Back to Home Button */}
+      <div className="absolute top-5 left-5 z-20">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-slate-900 bg-white/80 hover:bg-white border border-slate-200/90 px-3.5 py-2 rounded-xl shadow-2xs transition-all backdrop-blur-md"
+        >
+          <ArrowLeft className="w-4 h-4 text-[#2d8a2d]" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
+
+      <div className="w-full max-w-md space-y-6 relative z-10 pt-8 sm:pt-0">
         {/* Branding Header */}
         <div className="text-center space-y-3">
           <div className="flex justify-center">
-            <Logo size="xl" variant="light" />
+            <Link href="/" title="Back to Home Landing Page" className="inline-block cursor-pointer hover:opacity-90 transition-opacity relative z-30">
+              <Logo size="xl" variant="light" />
+            </Link>
           </div>
           <p className="text-xs text-slate-500 max-w-xs mx-auto font-medium">
             Sign in to start instant 1-to-1 & group conversations in real time.
@@ -127,9 +141,9 @@ export function LoginForm() {
         </div>
 
         {/* Crisp White Card */}
-        <div className="bg-white/90 border border-slate-200/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-xl shadow-slate-900/5 space-y-6">
+        <div className="bg-white/90 border border-slate-200/90 backdrop-blur-xl rounded-2xl p-6 sm:p-7 shadow-xl shadow-slate-900/5 space-y-6">
           {errorMessage && (
-            <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs">
+            <div className="flex items-start gap-3 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs">
               <AlertCircle className="w-4 h-4 shrink-0 text-rose-500 mt-0.5" />
               <div className="leading-relaxed font-medium">{errorMessage}</div>
             </div>
@@ -148,7 +162,7 @@ export function LoginForm() {
                   type="button"
                   onClick={() => handleQuickDemoLogin(demo.phone, demo.name)}
                   disabled={isLoading}
-                  className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#88E788]/20 border border-slate-200 hover:border-[#88E788] text-left transition-all group disabled:opacity-50 shadow-2xs"
+                  className="p-2.5 rounded-lg bg-slate-50 hover:bg-[#88E788]/20 border border-slate-200 hover:border-[#88E788] text-left transition-all group disabled:opacity-50 shadow-2xs"
                 >
                   <p className="text-xs font-bold text-slate-800 group-hover:text-[#2d8a2d] truncate">
                     {demo.name.split(' ')[0]}
@@ -184,7 +198,7 @@ export function LoginForm() {
                       const c = COUNTRIES.find((item) => item.code === e.target.value);
                       if (c) setSelectedCountry(c);
                     }}
-                    className="appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-7 py-2.5 text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#88E788] cursor-pointer"
+                    className="appearance-none bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-7 py-2.5 text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#88E788] cursor-pointer"
                   >
                     {COUNTRIES.map((c) => (
                       <option key={c.code} value={c.code}>
@@ -206,7 +220,7 @@ export function LoginForm() {
                     placeholder="01712345678"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all font-mono"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-9 pr-3 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all font-mono"
                     required
                   />
                 </div>
@@ -234,7 +248,7 @@ export function LoginForm() {
                   placeholder="e.g. Ada Lovelace"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all"
                   required
                 />
               </div>
@@ -243,7 +257,7 @@ export function LoginForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-4 py-3 font-extrabold text-xs sm:text-sm shadow-md shadow-[#88E788]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-4 py-3 font-extrabold text-xs sm:text-sm shadow-md shadow-[#88E788]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>

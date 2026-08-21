@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { setIsSearchOpen, setActiveConversationId } from '@/redux/chatSlice';
@@ -9,12 +10,14 @@ import { useDebounce } from '@/hooks/useDebounce';
 import { Modal } from '@/components/ui/Modal';
 import { Avatar } from '@/components/ui/Avatar';
 import { ApiError } from '@/types/chat';
-import { Search, Loader2, UserX, MessageSquarePlus, AlertCircle } from 'lucide-react';
+import { Search, Loader2, UserX, MessageSquarePlus, AlertCircle, LogIn } from 'lucide-react';
 
 export function SearchModal() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const isOpen = useSelector((state: RootState) => state.chat.isSearchOpen);
   const currentUser = useSelector((state: RootState) => state.auth.user);
+  const token = useSelector((state: RootState) => state.auth.token);
 
   const [query, setQuery] = useState('');
   const debouncedQuery = useDebounce(query, 300);
@@ -44,8 +47,14 @@ export function SearchModal() {
     setQuery('');
   };
 
+  const handleGoToLogin = () => {
+    dispatch(setIsSearchOpen(false));
+    router.push('/login');
+  };
+
   const filteredUsers = users?.filter((u) => u._id !== currentUser?._id) || [];
   const typedError = error && 'data' in error ? (error.data as ApiError) : null;
+  const isNoTokenError = typedError?.error?.code === 'NO_TOKEN' || !token;
 
   return (
     <Modal
@@ -71,15 +80,27 @@ export function SearchModal() {
         </div>
 
         <div className="min-h-[220px] max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 pt-1">
-          {!query.trim() ? (
+          {isNoTokenError ? (
+            <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs text-center flex flex-col items-center justify-center gap-2 space-y-1 font-medium">
+              <AlertCircle className="w-6 h-6 text-amber-500" />
+              <p className="font-bold">Authentication Required</p>
+              <p className="text-slate-600 text-[11px]">Your session token is missing or expired. Please sign in to search users.</p>
+              <button
+                onClick={handleGoToLogin}
+                className="mt-1 inline-flex items-center gap-1.5 text-xs font-extrabold bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-3.5 py-1.5 rounded-xl shadow-2xs transition-all"
+              >
+                <LogIn className="w-3.5 h-3.5" /> Sign In Now
+              </button>
+            </div>
+          ) : !query.trim() ? (
             <div className="h-44 flex flex-col items-center justify-center text-center p-4 text-slate-400 space-y-2">
               <Search className="w-7 h-7 stroke-[1.5]" />
               <p className="text-xs">Type a phone number or name to search for users.</p>
             </div>
           ) : isLoading ? (
             <div className="h-44 flex items-center justify-center text-slate-500 gap-2">
-              <Loader2 className="w-4 h-4 animate-spin" />
-              <span className="text-xs">Searching users...</span>
+              <Loader2 className="w-4 h-4 animate-spin text-[#2d8a2d]" />
+              <span className="text-xs font-medium">Searching users...</span>
             </div>
           ) : isError ? (
             <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs text-center flex items-center justify-center gap-2 font-medium">

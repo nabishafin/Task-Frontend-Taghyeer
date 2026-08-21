@@ -33,7 +33,7 @@ export function Logo({
   const isDark = variant === 'dark';
 
   return (
-    <div className={cn('inline-flex items-center gap-2.5 group select-none', className)}>
+    <div className={cn('inline-flex items-center gap-2.5 group select-none cursor-pointer', className)}>
       <div
         className={cn(
           'relative rounded-2xl flex items-center justify-center font-bold shadow-md transition-all duration-300 group-hover:scale-105 shrink-0 overflow-hidden',
