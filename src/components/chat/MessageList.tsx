@@ -2,13 +2,14 @@
 
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
-import { useGetMessagesQuery, useGetConversationsQuery } from '@/store/apiSlice';
+import { RootState } from '@/redux/store';
+import { useGetMessagesQuery, useGetConversationsQuery } from '@/redux/apiSlice';
 import { MessageItem } from './MessageItem';
 import { SmartScrollButton } from './SmartScrollButton';
 import { MessageSkeleton } from '@/components/ui/Skeleton';
 import { useAutoScroll } from '@/hooks/useAutoScroll';
 import { formatDateSeparator, isSameDay, isWithinMinutes } from '@/utils/formatters';
+import { ApiError } from '@/types/chat';
 import { MessageSquare, RefreshCw, AlertCircle, Sparkles } from 'lucide-react';
 
 export function MessageList() {
@@ -24,14 +25,12 @@ export function MessageList() {
     { skip: !activeId }
   );
 
-  const rawMessages = data?.messages || [];
-
-  // Sort messages chronologically (oldest first, newest last)
   const messages = useMemo(() => {
-    return [...rawMessages].sort(
+    const raw = data?.messages || [];
+    return [...raw].sort(
       (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
     );
-  }, [rawMessages]);
+  }, [data?.messages]);
 
   const {
     containerRef,
@@ -57,9 +56,10 @@ export function MessageList() {
     );
   }
 
+  const typedError = error && 'data' in error ? (error.data as ApiError) : null;
+
   return (
     <div className="relative flex-1 flex flex-col h-full overflow-hidden bg-slate-950/20">
-      {/* Scrollable Container */}
       <div
         ref={containerRef}
         onScroll={handleScroll}
@@ -76,7 +76,7 @@ export function MessageList() {
           <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-rose-400">
             <AlertCircle className="w-8 h-8" />
             <p className="text-xs">
-              {(error as any)?.data?.error?.message || 'Failed to load messages.'}
+              {typedError?.error?.message || 'Failed to load messages.'}
             </p>
             <button
               onClick={() => refetch()}
@@ -101,11 +101,9 @@ export function MessageList() {
           messages.map((msg, index) => {
             const prevMsg = index > 0 ? messages[index - 1] : null;
 
-            // Date separator check
             const showDateSeparator =
               !prevMsg || !isSameDay(prevMsg.createdAt, msg.createdAt);
 
-            // Grouping check: same sender & within 5 mins
             const getSenderId = (m: typeof msg) =>
               typeof m.sender === 'object' ? m.sender._id : m.sender;
 
@@ -143,7 +141,6 @@ export function MessageList() {
         )}
       </div>
 
-      {/* Floating Smart Scroll Indicator */}
       <SmartScrollButton
         isVisible={!isNearBottom || unreadNewCount > 0}
         unreadCount={unreadNewCount}

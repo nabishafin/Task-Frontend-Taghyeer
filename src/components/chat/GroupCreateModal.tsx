@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { setIsGroupModalOpen, setActiveConversationId } from '@/store/chatSlice';
-import { useLazySearchUsersQuery, useCreateGroupConversationMutation } from '@/store/apiSlice';
+import { RootState } from '@/redux/store';
+import { setIsGroupModalOpen, setActiveConversationId } from '@/redux/chatSlice';
+import { useLazySearchUsersQuery, useCreateGroupConversationMutation } from '@/redux/apiSlice';
 import { useDebounce } from '@/hooks/useDebounce';
 import { Modal } from '@/components/ui/Modal';
 import { Avatar } from '@/components/ui/Avatar';
-import { User } from '@/types/chat';
+import { User, ApiError } from '@/types/chat';
 import { Search, X, Users, Loader2, Plus, AlertCircle } from 'lucide-react';
 
 export function GroupCreateModal() {
@@ -64,8 +64,8 @@ export function GroupCreateModal() {
       dispatch(setActiveConversationId(newGroup._id));
       dispatch(setIsGroupModalOpen(false));
       resetForm();
-    } catch (err: any) {
-      // Error handled via RTK Query mutation state
+    } catch {
+      // Handled via state
     }
   };
 
@@ -85,11 +85,9 @@ export function GroupCreateModal() {
     (u) => u._id !== currentUser?._id && !selectedUsers.some((s) => s._id === u._id)
   ) || [];
 
+  const typedError = apiError && 'data' in apiError ? (apiError.data as ApiError) : null;
   const errorMessage =
-    validationError ||
-    (apiError && 'data' in apiError
-      ? (apiError.data as any)?.error?.message || 'Failed to create group.'
-      : null);
+    validationError || typedError?.error?.message || null;
 
   return (
     <Modal
@@ -107,7 +105,6 @@ export function GroupCreateModal() {
           </div>
         )}
 
-        {/* Group Name Input */}
         <div>
           <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
             Group Name
@@ -125,7 +122,6 @@ export function GroupCreateModal() {
           />
         </div>
 
-        {/* Selected Participants Chips */}
         <div>
           <div className="flex justify-between items-center mb-2">
             <label className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
@@ -160,7 +156,6 @@ export function GroupCreateModal() {
           )}
         </div>
 
-        {/* User Search & Selection List */}
         <div>
           <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
             Add Members
@@ -212,7 +207,6 @@ export function GroupCreateModal() {
           </div>
         </div>
 
-        {/* Submit Button */}
         <div className="pt-2 flex justify-end gap-3 border-t border-slate-800">
           <button
             type="button"

@@ -21,7 +21,7 @@ const getInitialAuth = (): AuthState => {
       user: user || null,
       isAuthenticated: Boolean(token && user),
     };
-  } catch (e) {
+  } catch {
     return { token: null, user: null, isAuthenticated: false };
   }
 };

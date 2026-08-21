@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { setIsSearchOpen, setActiveConversationId } from '@/store/chatSlice';
-import { useLazySearchUsersQuery, useStartDirectConversationMutation } from '@/store/apiSlice';
+import { RootState } from '@/redux/store';
+import { setIsSearchOpen, setActiveConversationId } from '@/redux/chatSlice';
+import { useLazySearchUsersQuery, useStartDirectConversationMutation } from '@/redux/apiSlice';
 import { useDebounce } from '@/hooks/useDebounce';
 import { Modal } from '@/components/ui/Modal';
 import { Avatar } from '@/components/ui/Avatar';
+import { ApiError } from '@/types/chat';
 import { Search, Loader2, UserX, MessageSquarePlus, AlertCircle } from 'lucide-react';
 
 export function SearchModal() {
@@ -33,7 +34,7 @@ export function SearchModal() {
       dispatch(setActiveConversationId(conv._id));
       dispatch(setIsSearchOpen(false));
       setQuery('');
-    } catch (err) {
+    } catch {
       // Error handled
     }
   };
@@ -43,8 +44,8 @@ export function SearchModal() {
     setQuery('');
   };
 
-  // Filter out current user from search results
   const filteredUsers = users?.filter((u) => u._id !== currentUser?._id) || [];
+  const typedError = error && 'data' in error ? (error.data as ApiError) : null;
 
   return (
     <Modal
@@ -54,7 +55,6 @@ export function SearchModal() {
       subtitle="Search users by name or phone number"
     >
       <div className="space-y-4">
-        {/* Search Bar */}
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
@@ -70,7 +70,6 @@ export function SearchModal() {
           )}
         </div>
 
-        {/* Results List */}
         <div className="min-h-[220px] max-h-[340px] overflow-y-auto custom-scrollbar space-y-2 pt-2">
           {!query.trim() ? (
             <div className="h-44 flex flex-col items-center justify-center text-center p-4 text-slate-500 space-y-2">
@@ -85,7 +84,7 @@ export function SearchModal() {
           ) : isError ? (
             <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs text-center flex items-center justify-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{(error as any)?.data?.error?.message || 'Search failed. Please try again.'}</span>
+              <span>{typedError?.error?.message || 'Search failed. Please try again.'}</span>
             </div>
           ) : filteredUsers.length === 0 ? (
             <div className="h-44 flex flex-col items-center justify-center text-center p-4 text-slate-400 space-y-2">

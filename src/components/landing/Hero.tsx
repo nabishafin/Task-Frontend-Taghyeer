@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Zap, Shield, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, CheckCircle2 } from 'lucide-react';
 import { Avatar } from '@/components/ui/Avatar';
 
 const SIMULATED_MESSAGES = [
@@ -23,12 +23,10 @@ export function Hero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-950">
-      {/* Glow Effects */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-600/20 to-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
@@ -62,7 +60,6 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Micro Feature Badges */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-medium">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Socket.io Real-Time
@@ -76,10 +73,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Animated Live Interactive Chat Mockup */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md bg-slate-900/90 border border-slate-800/90 rounded-3xl p-5 shadow-2xl backdrop-blur-xl space-y-4">
-              {/* Header */}
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div className="flex items-center gap-3">
                   <Avatar name="Pulse Team" seed="pulse-demo" size="md" isGroup />
@@ -96,7 +91,6 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Chat Messages */}
               <div className="space-y-3 min-h-[220px]">
                 {SIMULATED_MESSAGES.slice(0, activeMessageCount).map((msg, idx) => (
                   <div
@@ -124,7 +118,6 @@ export function Hero() {
                 ))}
               </div>
 
-              {/* Input Mock */}
               <div className="pt-2 border-t border-slate-800 flex items-center gap-2">
                 <div className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-400 flex items-center justify-between">
                   <span>Type a message...</span>

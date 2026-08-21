@@ -2,12 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowRight, MessageSquare } from 'lucide-react';
 
 export function CTA() {
   return (
     <section className="py-24 bg-slate-950 relative overflow-hidden border-t border-slate-900">
-      {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950/40 via-slate-950 to-cyan-950/40 pointer-events-none" />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
 

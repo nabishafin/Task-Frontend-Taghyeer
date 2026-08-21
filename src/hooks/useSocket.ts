@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
+import { RootState } from '@/redux/store';
 import { socketService } from '@/services/socket';
-import { setSocketConnected } from '@/store/chatSlice';
+import { setSocketConnected } from '@/redux/chatSlice';
 
 export function useSocket() {
   const dispatch = useDispatch();

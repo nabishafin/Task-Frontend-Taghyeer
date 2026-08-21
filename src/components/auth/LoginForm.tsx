@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLoginMutation } from '@/store/apiSlice';
-import { setCredentials } from '@/store/authSlice';
-import { RootState } from '@/store/store';
+import { useLoginMutation } from '@/redux/apiSlice';
+import { setCredentials } from '@/redux/authSlice';
+import { RootState } from '@/redux/store';
+import { ApiError } from '@/types/chat';
 import { Phone, User as UserIcon, MessageSquare, ArrowRight, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 
 export function LoginForm() {
@@ -49,27 +50,23 @@ export function LoginForm() {
       const res = await login({ phone: trimmedPhone, name: trimmedName }).unwrap();
       dispatch(setCredentials({ token: res.token, user: res.user }));
       router.push('/chat');
-    } catch (err: any) {
-      // Error handles automatically via RTK Query mutation state
+    } catch {
+      // Handled via error state
     }
   };
 
+  const typedError = error && 'data' in error ? (error.data as ApiError) : null;
   const errorMessage =
     validationError ||
-    (error && 'data' in error
-      ? (error.data as any)?.error?.message || 'Login failed. Please check your credentials.'
-      : error
-      ? 'Network error. Please try again.'
-      : null);
+    typedError?.error?.message ||
+    (error ? 'Network error. Please try again.' : null);
 
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4 relative overflow-hidden selection:bg-indigo-500 selection:text-white">
-      {/* Dynamic Background Gradients */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md space-y-8 relative z-10">
-        {/* Header Branding */}
         <div className="text-center space-y-3">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 text-white shadow-xl shadow-indigo-500/25 mb-2">
             <MessageSquare className="w-8 h-8" />
@@ -82,7 +79,6 @@ export function LoginForm() {
           </p>
         </div>
 
-        {/* Login Card */}
         <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-8 shadow-2xl space-y-6">
           {errorMessage && (
             <div className="flex items-start gap-3 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs animate-in fade-in duration-200">

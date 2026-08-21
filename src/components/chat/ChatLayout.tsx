@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+import { RootState } from '@/redux/store';
 import { SidebarHeader } from './SidebarHeader';
 import { ConversationList } from './ConversationList';
 import { MessageHeader } from './MessageHeader';
@@ -19,7 +19,6 @@ export function ChatLayout() {
 
   return (
     <div className="h-screen w-screen bg-slate-950 text-slate-100 flex overflow-hidden selection:bg-indigo-500 selection:text-white">
-      {/* Sidebar (Conversations List) */}
       <div
         className={cn(
           'w-full md:w-80 lg:w-96 border-r border-slate-800/80 flex flex-col h-full shrink-0 bg-slate-900/40 backdrop-blur-xl transition-all duration-300',
@@ -32,7 +31,6 @@ export function ChatLayout() {
         </div>
       </div>
 
-      {/* Main Active Conversation View */}
       <div
         className={cn(
           'flex-1 flex flex-col h-full overflow-hidden bg-slate-950/60 relative',
@@ -43,7 +41,7 @@ export function ChatLayout() {
           <>
             <MessageHeader />
             <MessageList />
-            <MessageComposer />
+            <MessageComposer key={activeId} />
           </>
         ) : (
           <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-500 space-y-3">
@@ -62,7 +60,6 @@ export function ChatLayout() {
         )}
       </div>
 
-      {/* Modals */}
       <SearchModal />
       <GroupCreateModal />
       <GroupManageModal />

@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { useGetConversationsQuery } from '@/store/apiSlice';
-import { setActiveConversationId, setIsSearchOpen, setIsGroupModalOpen } from '@/store/chatSlice';
+import { RootState } from '@/redux/store';
+import { useGetConversationsQuery } from '@/redux/apiSlice';
+import { setActiveConversationId, setIsSearchOpen, setIsGroupModalOpen } from '@/redux/chatSlice';
 import { ConversationItem } from './ConversationItem';
 import { ConversationSkeleton } from '@/components/ui/Skeleton';
+import { ApiError } from '@/types/chat';
 import { Search, UserPlus, Users, MessageSquare, RefreshCw, AlertCircle } from 'lucide-react';
 
 export function ConversationList() {
@@ -23,11 +24,9 @@ export function ConversationList() {
   const conversations = data?.data || [];
 
   const filteredConversations = conversations.filter((c) => {
-    // Type filter
     if (filter === 'direct' && c.type !== 'direct') return false;
     if (filter === 'group' && c.type !== 'group') return false;
 
-    // Search query filter
     if (localSearch.trim()) {
       const q = localSearch.toLowerCase();
       if (c.type === 'group') {
@@ -42,9 +41,10 @@ export function ConversationList() {
     return true;
   });
 
+  const typedError = error && 'data' in error ? (error.data as ApiError) : null;
+
   return (
     <div className="flex flex-col h-full bg-slate-950/40">
-      {/* Search & Filter Header */}
       <div className="p-4 space-y-3 border-b border-slate-800/60">
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
@@ -57,7 +57,6 @@ export function ConversationList() {
           />
         </div>
 
-        {/* Filter Pills */}
         <div className="flex items-center gap-1.5 p-1 bg-slate-900/80 rounded-xl border border-slate-800/80">
           {(['all', 'direct', 'group'] as const).map((tab) => (
             <button
@@ -75,7 +74,6 @@ export function ConversationList() {
         </div>
       </div>
 
-      {/* Conversation Items List */}
       <div className="flex-1 overflow-y-auto p-3 space-y-1.5 custom-scrollbar">
         {isLoading ? (
           <>
@@ -88,7 +86,7 @@ export function ConversationList() {
           <div className="p-6 text-center space-y-3 text-rose-400">
             <AlertCircle className="w-8 h-8 mx-auto" />
             <p className="text-xs">
-              {(error as any)?.data?.error?.message || 'Failed to load conversations.'}
+              {typedError?.error?.message || 'Failed to load conversations.'}
             </p>
             <button
               onClick={() => refetch()}

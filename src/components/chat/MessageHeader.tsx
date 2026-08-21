@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { setMobileView, setIsGroupManageOpen } from '@/store/chatSlice';
-import { useGetConversationsQuery } from '@/store/apiSlice';
+import { RootState } from '@/redux/store';
+import { setMobileView, setIsGroupManageOpen } from '@/redux/chatSlice';
+import { useGetConversationsQuery } from '@/redux/apiSlice';
 import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
-import { ArrowLeft, Settings, Users, Phone } from 'lucide-react';
+import { ArrowLeft, Settings, Users } from 'lucide-react';
 
 export function MessageHeader() {
   const dispatch = useDispatch();
@@ -33,7 +33,6 @@ export function MessageHeader() {
   return (
     <div className="p-3.5 px-4 border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md flex items-center justify-between gap-3 shrink-0">
       <div className="flex items-center gap-3 min-w-0">
-        {/* Mobile Back Button */}
         <button
           onClick={() => dispatch(setMobileView('list'))}
           className="md:hidden p-2 -ml-1 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
@@ -63,7 +62,6 @@ export function MessageHeader() {
         </div>
       </div>
 
-      {/* Header Actions */}
       <div className="flex items-center gap-1 shrink-0">
         {isGroup && (
           <button

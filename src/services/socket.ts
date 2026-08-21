@@ -39,7 +39,7 @@ class SocketService {
     return this.socket;
   }
 
-  sendMessage(conversationId: string, text: string, callback?: (response: any) => void) {
+  sendMessage(conversationId: string, text: string, callback?: (response: unknown) => void) {
     if (this.socket && this.socket.connected) {
       this.socket.emit('message:send', { conversationId, text }, callback);
     }

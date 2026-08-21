@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { logout } from '@/store/authSlice';
-import { setIsSearchOpen, setIsGroupModalOpen } from '@/store/chatSlice';
+import { RootState } from '@/redux/store';
+import { logout } from '@/redux/authSlice';
+import { setIsSearchOpen, setIsGroupModalOpen } from '@/redux/chatSlice';
 import { Avatar } from '@/components/ui/Avatar';
 import { UserPlus, Users, LogOut, Wifi, WifiOff } from 'lucide-react';
 
@@ -15,7 +15,6 @@ export function SidebarHeader() {
 
   return (
     <div className="p-4 border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md flex items-center justify-between gap-3">
-      {/* Current User Profile Info */}
       <div className="flex items-center gap-3 min-w-0">
         <Avatar name={user?.name} seed={user?._id} size="md" isOnline={socketConnected} />
         <div className="min-w-0 flex-1">
@@ -35,7 +34,6 @@ export function SidebarHeader() {
         </div>
       </div>
 
-      {/* Quick Actions */}
       <div className="flex items-center gap-1 shrink-0">
         <button
           onClick={() => dispatch(setIsSearchOpen(true))}

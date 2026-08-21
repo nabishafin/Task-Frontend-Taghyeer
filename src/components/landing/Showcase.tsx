@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
-import { MessageSquare, Users, Check, ShieldCheck, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 export function Showcase() {
   const [activeTab, setActiveTab] = useState<'direct' | 'group'>('direct');
@@ -22,7 +22,6 @@ export function Showcase() {
             Clean, distraction-free desktop & mobile chat interface built for daily productivity.
           </p>
 
-          {/* Interactive Mode Switcher Tabs */}
           <div className="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 gap-2 mt-4">
             <button
               onClick={() => setActiveTab('direct')}
@@ -47,9 +46,7 @@ export function Showcase() {
           </div>
         </div>
 
-        {/* Browser Mockup Window */}
         <div className="max-w-5xl mx-auto rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-2xl">
-          {/* Top Window Bar */}
           <div className="px-5 py-3.5 bg-slate-950/90 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-rose-500/80" />
@@ -62,9 +59,7 @@ export function Showcase() {
             <div className="w-12" />
           </div>
 
-          {/* Chat Mockup Inside */}
           <div className="grid grid-cols-1 md:grid-cols-12 min-h-[420px]">
-            {/* Sidebar Mock */}
             <div className="hidden md:block md:col-span-4 border-r border-slate-800/80 p-4 bg-slate-950/40 space-y-3">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div className="flex items-center gap-2">
@@ -97,9 +92,7 @@ export function Showcase() {
               </div>
             </div>
 
-            {/* Chat Body Mock */}
             <div className="md:col-span-8 p-6 flex flex-col justify-between bg-slate-950/20">
-              {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-3">
                   <Avatar
@@ -120,7 +113,6 @@ export function Showcase() {
                 </div>
               </div>
 
-              {/* Message bubbles */}
               <div className="space-y-3 py-6">
                 {activeTab === 'direct' ? (
                   <>
@@ -156,7 +148,6 @@ export function Showcase() {
                 )}
               </div>
 
-              {/* Composer */}
               <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
                 <input
                   type="text"

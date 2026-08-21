@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, Bot, User, Sparkles } from 'lucide-react';
-import { Avatar } from '@/components/ui/Avatar';
+import { Send, Bot, Sparkles } from 'lucide-react';
 
 interface ChatMessage {
   id: string;
@@ -35,7 +34,7 @@ export function InteractiveDemo() {
 
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const userMsg: ChatMessage = {
-      id: Date.now().toString(),
+      id: `msg-${messages.length + 1}-${time}`,
       sender: 'user',
       text: userText,
       time,
@@ -45,7 +44,6 @@ export function InteractiveDemo() {
     setInput('');
     setIsTyping(true);
 
-    // Simulate automated response
     setTimeout(() => {
       let replyText = 'Pulse features real-time Socket.io updates, instant user search, and group admin controls!';
 
@@ -58,13 +56,14 @@ export function InteractiveDemo() {
         replyText = 'Absolutly! If you type a message and switch conversations before sending, your text draft is preserved automatically!';
       }
 
+      const botTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       setMessages((prev) => [
         ...prev,
         {
-          id: (Date.now() + 1).toString(),
+          id: `bot-${messages.length + 2}-${botTime}`,
           sender: 'bot',
           text: replyText,
-          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          time: botTime,
         },
       ]);
       setIsTyping(false);
@@ -88,7 +87,6 @@ export function InteractiveDemo() {
         </div>
 
         <div className="max-w-2xl mx-auto bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-xl space-y-4">
-          {/* Preset Prompts */}
           <div className="flex flex-wrap gap-2 pb-3 border-b border-slate-800">
             {PRESET_QUESTIONS.map((q, idx) => (
               <button
@@ -101,7 +99,6 @@ export function InteractiveDemo() {
             ))}
           </div>
 
-          {/* Messages Window */}
           <div className="h-64 overflow-y-auto custom-scrollbar space-y-3 p-2">
             {messages.map((m) => (
               <div
@@ -133,7 +130,6 @@ export function InteractiveDemo() {
             )}
           </div>
 
-          {/* Composer */}
           <form
             onSubmit={(e) => {
               e.preventDefault();

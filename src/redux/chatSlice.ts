@@ -34,7 +34,6 @@ const chatSlice = createSlice({
       state.activeConversationId = action.payload;
       if (action.payload) {
         state.mobileView = 'chat';
-        // Clear unread count when conversation is opened
         state.unreadCounts[action.payload] = 0;
       }
     },

@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { setIsGroupManageOpen } from '@/store/chatSlice';
+import { RootState } from '@/redux/store';
+import { setIsGroupManageOpen } from '@/redux/chatSlice';
 import {
   useGetConversationsQuery,
   useRenameGroupMutation,
@@ -11,7 +11,7 @@ import {
   useRemoveParticipantMutation,
   usePromoteAdminMutation,
   useLazySearchUsersQuery,
-} from '@/store/apiSlice';
+} from '@/redux/apiSlice';
 import { Modal } from '@/components/ui/Modal';
 import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
@@ -24,7 +24,6 @@ import {
   Check,
   LogOut,
   Loader2,
-  AlertCircle,
   Search,
 } from 'lucide-react';
 
@@ -74,14 +73,18 @@ export function GroupManageModal() {
     try {
       await renameGroup({ id: currentGroup._id, name: newGroupName.trim() }).unwrap();
       setIsEditingName(false);
-    } catch (e) {}
+    } catch {
+      // Error handled
+    }
   };
 
   const handleAddMember = async (userId: string) => {
     try {
       await addParticipants({ id: currentGroup._id, userIds: [userId] }).unwrap();
       setSearchQuery('');
-    } catch (e) {}
+    } catch {
+      // Error handled
+    }
   };
 
   const handleRemoveMember = async (userId: string) => {
@@ -90,13 +93,17 @@ export function GroupManageModal() {
       if (userId === currentUser?._id) {
         handleClose();
       }
-    } catch (e) {}
+    } catch {
+      // Error handled
+    }
   };
 
   const handlePromoteAdmin = async (userId: string) => {
     try {
       await promoteAdmin({ id: currentGroup._id, userId }).unwrap();
-    } catch (e) {}
+    } catch {
+      // Error handled
+    }
   };
 
   const existingParticipantIds = new Set(currentGroup.participants?.map((p) => p._id) || []);
@@ -111,7 +118,6 @@ export function GroupManageModal() {
       maxWidth="md"
     >
       <div className="space-y-6">
-        {/* Group Name & Header */}
         <div className="flex items-center gap-3 p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
           <Avatar name={currentGroup.name} seed={currentGroup._id} size="lg" isGroup />
           <div className="flex-1 min-w-0">
@@ -155,7 +161,6 @@ export function GroupManageModal() {
           </div>
         </div>
 
-        {/* Member List Section */}
         <div>
           <div className="flex justify-between items-center mb-3">
             <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
@@ -172,7 +177,6 @@ export function GroupManageModal() {
             )}
           </div>
 
-          {/* Add Member Search Panel */}
           {isAddMemberOpen && (
             <div className="p-3 mb-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
               <div className="relative">
@@ -214,7 +218,6 @@ export function GroupManageModal() {
             </div>
           )}
 
-          {/* Participant Rows */}
           <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar">
             {currentGroup.participants?.map((member) => {
               const isMemberAdmin = currentGroup.admins?.includes(member._id);
@@ -270,7 +273,6 @@ export function GroupManageModal() {
           </div>
         </div>
 
-        {/* Leave Group Action */}
         <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
           <button
             onClick={() => currentUser && handleRemoveMember(currentUser._id)}

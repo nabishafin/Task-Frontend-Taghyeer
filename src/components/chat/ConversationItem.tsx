@@ -6,7 +6,7 @@ import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
 import { formatConversationTime } from '@/utils/formatters';
 import { cn } from '@/utils/cn';
-import { Users, User as UserIcon } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 interface ConversationItemProps {
   conversation: Conversation;

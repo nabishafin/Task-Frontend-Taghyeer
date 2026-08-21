@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
-import { setDraft, clearDraft } from '@/store/chatSlice';
-import { useSendMessageMutation } from '@/store/apiSlice';
+import { RootState } from '@/redux/store';
+import { setDraft, clearDraft } from '@/redux/chatSlice';
+import { useSendMessageMutation } from '@/redux/apiSlice';
+import { ApiError } from '@/types/chat';
 import { Send, Loader2, AlertCircle } from 'lucide-react';
 
 export function MessageComposer() {
@@ -12,23 +13,12 @@ export function MessageComposer() {
   const activeId = useSelector((state: RootState) => state.chat.activeConversationId);
   const drafts = useSelector((state: RootState) => state.chat.drafts);
 
-  const [text, setText] = useState('');
+  const [text, setText] = useState(() => (activeId ? drafts[activeId] || '' : ''));
   const [sendError, setSendError] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const [sendMessage, { isLoading }] = useSendMessageMutation();
 
-  // Restore draft when active conversation changes
-  useEffect(() => {
-    if (activeId && drafts[activeId]) {
-      setText(drafts[activeId]);
-    } else {
-      setText('');
-    }
-    setSendError(null);
-  }, [activeId, drafts]);
-
-  // Update draft in Redux as user types
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = e.target.value;
     setText(val);
@@ -51,11 +41,11 @@ export function MessageComposer() {
       if (textareaRef.current) {
         textareaRef.current.style.height = 'auto';
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const typedErr = err as { data?: ApiError };
       setSendError(
-        err?.data?.error?.message || 'Failed to send message. Click send to try again.'
+        typedErr?.data?.error?.message || 'Failed to send message. Click send to try again.'
       );
-      // Keep user's text in composer so it is NOT lost on failure!
     }
   };
 
@@ -66,7 +56,6 @@ export function MessageComposer() {
     }
   };
 
-  // Auto-resize textarea height
   useEffect(() => {
     const el = textareaRef.current;
     if (el) {

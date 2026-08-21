@@ -13,9 +13,6 @@ import {
   MessagesResponse,
   Message,
   SendMessageRequest,
-  AddParticipantsRequest,
-  PromoteAdminRequest,
-  RenameGroupRequest,
 } from '@/types/chat';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://frontend-task-chatapp.onrender.com/api';
@@ -72,7 +69,6 @@ export const apiSlice = createApi({
                   createdAt: newMsg.createdAt,
                 };
                 targetConv.updatedAt = newMsg.createdAt;
-                // Sort conversations by latest updatedAt
                 draft.data.sort((a, b) => new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime());
               }
             });
@@ -94,8 +90,8 @@ export const apiSlice = createApi({
           await cacheEntryRemoved;
           unsubscribeMsg();
           unsubscribeConv();
-        } catch (e) {
-          // Cache entry removed before resolution
+        } catch {
+          // Cache removed
         }
       },
     }),
@@ -168,7 +164,6 @@ export const apiSlice = createApi({
             if (newMsg.conversation === id) {
               updateCachedData((draft) => {
                 if (!draft || !draft.messages) return;
-                // Prevent duplicate message
                 const exists = draft.messages.some((m) => m._id === newMsg._id);
                 if (!exists) {
                   draft.messages.push(newMsg);
@@ -179,7 +174,7 @@ export const apiSlice = createApi({
 
           await cacheEntryRemoved;
           unsubscribe();
-        } catch (e) {
+        } catch {
           // Cache removed
         }
       },
@@ -202,7 +197,6 @@ export const apiSlice = createApi({
           createdAt: new Date().toISOString(),
         };
 
-        // Optimistic update for current conversation's messages
         const patchResult = dispatch(
           apiSlice.util.updateQueryData('getMessages', { id: conversationId }, (draft) => {
             if (draft && draft.messages) {
@@ -213,7 +207,6 @@ export const apiSlice = createApi({
 
         try {
           const { data: realMsg } = await queryFulfilled;
-          // Replace temp message with real message
           dispatch(
             apiSlice.util.updateQueryData('getMessages', { id: conversationId }, (draft) => {
               if (draft && draft.messages) {
@@ -228,9 +221,7 @@ export const apiSlice = createApi({
           patchResult.undo();
         }
       },
-      invalidatesTags: (result, error, { conversationId }) => [
-        { type: 'Conversations' },
-      ],
+      invalidatesTags: () => [{ type: 'Conversations' }],
     }),
   }),
 });

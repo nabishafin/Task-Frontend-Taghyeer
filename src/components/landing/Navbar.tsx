@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MessageSquare, ArrowRight, Sparkles } from 'lucide-react';
+import { MessageSquare, ArrowRight } from 'lucide-react';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +24,6 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
             <MessageSquare className="w-5 h-5" />
@@ -34,7 +33,6 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <a href="#features" className="hover:text-white transition-colors">
             Features
@@ -47,7 +45,6 @@ export function Navbar() {
           </a>
         </nav>
 
-        {/* Action Button */}
         <div className="flex items-center gap-3">
           <Link
             href="/login"

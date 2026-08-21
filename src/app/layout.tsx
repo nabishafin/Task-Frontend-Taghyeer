@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ReduxProvider } from '@/store/provider';
+import { ReduxProvider } from '@/redux/provider';
 
 export const metadata: Metadata = {
   title: 'Pulse — Conversations that never miss a moment.',
