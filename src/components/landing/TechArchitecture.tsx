@@ -84,7 +84,7 @@ export function TechArchitecture() {
             Engineered for high-performance messaging.
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-            Discover how Pulse combines Socket.io, Redux Toolkit Query cache invalidation, and strict state management to deliver instant chat.
+            Discover how VibeWire combines Socket.io, Redux Toolkit Query cache invalidation, and strict state management to deliver instant chat.
           </p>
         </div>
 

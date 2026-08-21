@@ -51,7 +51,7 @@ export function ChatLayout() {
           <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-400 space-y-4 bg-slate-50/50">
             <Logo size="lg" variant="light" />
             <div className="space-y-1 max-w-sm">
-              <h3 className="text-base font-extrabold text-slate-900">Welcome to Pulse Messenger</h3>
+              <h3 className="text-base font-extrabold text-slate-900">Welcome to VibeWire Messenger</h3>
               <p className="text-xs text-slate-500 leading-relaxed">
                 Select a conversation from the sidebar or click below to start a new chat or group.
               </p>

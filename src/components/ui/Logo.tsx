@@ -24,19 +24,26 @@ export function Logo({
     xl: 'h-12 sm:h-14',
   };
 
+  const isDark = variant === 'dark';
+
   return (
     <div className={cn('inline-flex items-center select-none cursor-pointer group', className)}>
       <div className={cn('relative flex items-center shrink-0', heights[size])}>
         <Image
-          src="/images/logo.png"
+          src="/image-removebg-preview.png"
           alt="VibeWire Logo"
           width={220}
           height={70}
-          className={cn('w-auto object-contain transition-transform duration-300 group-hover:scale-105', heights[size])}
+          className={cn(
+            'w-auto object-contain transition-transform duration-300 group-hover:scale-105',
+            heights[size],
+            isDark && 'brightness-200 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'
+          )}
           priority
         />
       </div>
     </div>
   );
 }
+
 

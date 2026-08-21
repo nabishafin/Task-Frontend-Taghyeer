@@ -63,7 +63,7 @@ export function Showcase() {
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             </div>
             <div className="px-3 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-400 font-mono text-[10px] flex items-center gap-1.5">
-              <span>https://pulse-chat.app/chat</span>
+              <span>https://vibewire.app/chat</span>
             </div>
             <Link href="/chat" className="text-xs text-[#88E788] hover:underline font-extrabold flex items-center gap-1">
               <span>Launch</span>
@@ -76,30 +76,30 @@ export function Showcase() {
             <div className="hidden md:block md:col-span-4 border-r border-slate-200 p-4 bg-slate-50/70 space-y-3">
               <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                 <div className="flex items-center gap-2.5">
-                  <Avatar name="Ada Lovelace" seed="ada" size="sm" isOnline />
+                  <Avatar name="Active Session" seed="user" size="sm" isOnline />
                   <div>
-                    <h5 className="text-xs font-bold text-slate-900">Ada Lovelace</h5>
-                    <p className="text-[10px] text-[#2d8a2d] font-semibold">Online</p>
+                    <h5 className="text-xs font-bold text-slate-900">Authenticated User</h5>
+                    <p className="text-[10px] text-[#2d8a2d] font-semibold">Online • Socket Synced</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-1.5 pt-1">
                 <div className={`p-3 rounded-xl border flex items-center gap-3 transition-all ${activeTab === 'direct' ? 'bg-[#88E788]/25 border-[#88E788] shadow-2xs' : 'bg-white border-slate-200'}`}>
-                  <Avatar name="Alan Turing" seed="alan" size="sm" isOnline />
+                  <Avatar name="Alex Smith" seed="alex" size="sm" isOnline />
                   <div className="flex-1 min-w-0">
-                    <h6 className="text-xs font-bold text-slate-900">Alan Turing</h6>
-                    <p className="text-[10px] text-slate-500 truncate">Let’s run the test suite!</p>
+                    <h6 className="text-xs font-bold text-slate-900">Alex Smith</h6>
+                    <p className="text-[10px] text-slate-500 truncate">+1 555-0192 • Direct Chat</p>
                   </div>
                 </div>
 
                 <div className={`p-3 rounded-xl border flex items-center gap-3 transition-all ${activeTab === 'group' ? 'bg-[#88E788]/25 border-[#88E788] shadow-2xs' : 'bg-white border-slate-200'}`}>
-                  <Avatar name="Pioneers Team" seed="pioneers" size="sm" isGroup />
+                  <Avatar name="Dev Team Group" seed="group1" size="sm" isGroup />
                   <div className="flex-1 min-w-0">
                     <h6 className="text-xs font-bold text-slate-900 flex items-center gap-1">
-                      Pioneers Team <Badge variant="accent" size="sm" className="bg-[#88E788]/30 text-slate-900 border-[#88E788]/60 text-[8px] py-0">Group</Badge>
+                      Dev Team Group <Badge variant="accent" size="sm" className="bg-[#88E788]/30 text-slate-900 border-[#88E788]/60 text-[8px] py-0">Group</Badge>
                     </h6>
-                    <p className="text-[10px] text-slate-500 truncate">Grace: Sprint meeting at 3 PM</p>
+                    <p className="text-[10px] text-slate-500 truncate">3 Members • Admin Controls</p>
                   </div>
                 </div>
               </div>
@@ -110,18 +110,18 @@ export function Showcase() {
               <div className="flex items-center justify-between pb-3.5 border-b border-slate-200">
                 <div className="flex items-center gap-3">
                   <Avatar
-                    name={activeTab === 'direct' ? 'Alan Turing' : 'Pioneers Team'}
-                    seed={activeTab === 'direct' ? 'alan' : 'pioneers'}
+                    name={activeTab === 'direct' ? 'Alex Smith' : 'Dev Team Group'}
+                    seed={activeTab === 'direct' ? 'alex' : 'group1'}
                     size="md"
                     isGroup={activeTab === 'group'}
                     isOnline={activeTab === 'direct'}
                   />
                   <div>
                     <h5 className="text-xs font-extrabold text-slate-900">
-                      {activeTab === 'direct' ? 'Alan Turing' : 'Pioneers Team'}
+                      {activeTab === 'direct' ? 'Alex Smith' : 'Dev Team Group'}
                     </h5>
                     <p className="text-[10px] text-slate-500">
-                      {activeTab === 'direct' ? '+1 555-222-2222' : '3 Members • Admin: Ada Lovelace'}
+                      {activeTab === 'direct' ? '+1 555-0192 • Direct 1-to-1' : '3 Members • Group Creator Admin'}
                     </p>
                   </div>
                 </div>
@@ -131,14 +131,14 @@ export function Showcase() {
                 {activeTab === 'direct' ? (
                   <>
                     <div className="flex flex-col items-start">
-                      <div className="bg-slate-100 border border-slate-200 text-slate-800 px-4 py-2.5 rounded-2xl rounded-bl-xs text-xs">
-                        Hey Ada, did you check the real-time websocket endpoint?
+                      <div className="bg-slate-100 border border-slate-200 text-slate-800 px-4 py-2.5 rounded-lg text-xs">
+                        Searching users by phone number and initiating a real-time 1-to-1 direct chat session.
                         <span className="block text-[9px] text-slate-400 mt-1">10:32 AM</span>
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
-                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-semibold px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
-                        Yes! Socket.io events stream instantly with zero latency.
+                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-semibold px-4 py-2.5 rounded-lg text-xs shadow-2xs">
+                        Socket.io real-time streaming connected with zero UI flashes!
                         <span className="block text-[9px] text-slate-900 mt-1 opacity-80">10:33 AM</span>
                       </div>
                     </div>
@@ -146,15 +146,15 @@ export function Showcase() {
                 ) : (
                   <>
                     <div className="flex flex-col items-start">
-                      <span className="text-[10px] font-bold text-slate-500 ml-1 mb-0.5">Grace Hopper</span>
-                      <div className="bg-slate-100 border border-slate-200 text-slate-800 px-4 py-2.5 rounded-2xl rounded-bl-xs text-xs">
-                        Team, the group management feature is working seamlessly!
+                      <span className="text-[10px] font-bold text-slate-500 ml-1 mb-0.5">Participant (+1 555-0144)</span>
+                      <div className="bg-slate-100 border border-slate-200 text-slate-800 px-4 py-2.5 rounded-lg text-xs">
+                        Group creation rule verified: Selected 2 participants (3 members total including creator).
                         <span className="block text-[9px] text-slate-400 mt-1">10:34 AM</span>
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
-                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-semibold px-4 py-2.5 rounded-2xl rounded-br-xs text-xs shadow-2xs">
-                        Promoted Alan to admin as well! 🚀
+                      <div className="bg-[#88E788] border border-[#6cd86c] text-slate-900 font-semibold px-4 py-2.5 rounded-lg text-xs shadow-2xs">
+                        Admin role promotion updated live via Socket.io broadcast! 🚀
                         <span className="block text-[9px] text-slate-900 mt-1 opacity-80">10:35 AM</span>
                       </div>
                     </div>

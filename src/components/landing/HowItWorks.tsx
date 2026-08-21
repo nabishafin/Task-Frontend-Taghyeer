@@ -41,7 +41,7 @@ export function HowItWorks() {
             <span>Simple 3-Step Process</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            Built for speed in 3 simple steps.
+            How VibeWire Works
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
             Designed for intuitive onboarding and effortless team communication in three simple steps.

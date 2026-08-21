@@ -50,7 +50,7 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed font-normal">
-            Pulse delivers instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io, smart auto-scroll, RTK Query cache streaming, and automatic draft preservation.
+            VibeWire delivers instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io, smart auto-scroll, RTK Query cache streaming, and automatic draft preservation.
           </p>
 
           {/* CTAs */}
@@ -60,7 +60,7 @@ export function Hero() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-extrabold text-slate-900 bg-[#88E788] hover:bg-[#73db73] px-5 py-2.5 rounded-lg shadow-md shadow-[#88E788]/30 transition-all hover:scale-105 active:scale-95"
             >
               <Sparkles className="w-4 h-4 text-[#2d8a2d]" />
-              <span>Launch Chat Application</span>
+              <span>Launch VibeWire Messenger</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -126,7 +126,7 @@ export function Hero() {
               </div>
               <div className="px-3 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-300 font-mono text-[10px] flex items-center gap-1.5">
                 <Activity className="w-3 h-3 text-[#88E788] animate-pulse" />
-                <span>pulse-chat.app / live-socket-stream</span>
+                <span>vibewire.app / live-messenger</span>
               </div>
               <div className="w-10" />
             </div>
@@ -138,11 +138,11 @@ export function Hero() {
                 <div className="flex items-center justify-between pb-2.5 border-b border-slate-800">
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-md bg-[#88E788] text-slate-900 flex items-center justify-center font-black text-xs">
-                      P
+                      V
                     </div>
                     <div>
-                      <h4 className="text-[11px] font-bold text-white">Acme Corp Workspace</h4>
-                      <p className="text-[9px] text-slate-400">Engineering Team</p>
+                      <h4 className="text-[11px] font-bold text-white">VibeWire Workspace</h4>
+                      <p className="text-[9px] text-slate-400">Live Production Server</p>
                     </div>
                   </div>
                 </div>
@@ -151,26 +151,26 @@ export function Hero() {
                   <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-1.5">Conversations</span>
                   
                   <div className="p-2 rounded-lg bg-[#88E788]/20 border border-[#88E788]/50 flex items-center gap-2">
-                    <Avatar name="Alan Turing" seed="alan" size="sm" isOnline />
+                    <Avatar name="Alex Smith" seed="alex" size="sm" isOnline />
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-bold text-white truncate">Alan Turing</p>
-                      <p className="text-[9px] text-[#88E788] truncate font-medium">Socket handler synced</p>
+                      <p className="text-xs font-bold text-white truncate">Alex Smith</p>
+                      <p className="text-[9px] text-[#88E788] truncate font-medium">Socket.io Connected</p>
                     </div>
                   </div>
 
                   <div className="p-2 rounded-lg bg-transparent hover:bg-slate-800/50 flex items-center gap-2 text-slate-400">
-                    <Avatar name="Pioneers Core" seed="pioneers" size="sm" isGroup />
+                    <Avatar name="Engineering Group" seed="group1" size="sm" isGroup />
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-bold text-slate-300 truncate">Pioneers Team</p>
-                      <p className="text-[9px] text-slate-500 truncate">Grace: Sprint 4 kickoff</p>
+                      <p className="text-xs font-bold text-slate-300 truncate">Engineering Group</p>
+                      <p className="text-[9px] text-slate-500 truncate">3 Members • Admin Mode</p>
                     </div>
                   </div>
 
                   <div className="p-2 rounded-lg bg-transparent hover:bg-slate-800/50 flex items-center gap-2 text-slate-400">
-                    <Avatar name="Ada Lovelace" seed="ada" size="sm" isOnline />
+                    <Avatar name="Sarah Jenkins" seed="sarah" size="sm" isOnline />
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-bold text-slate-300 truncate">Ada Lovelace</p>
-                      <p className="text-[9px] text-slate-500 truncate">Draft recovery active</p>
+                      <p className="text-xs font-bold text-slate-300 truncate">Sarah Jenkins</p>
+                      <p className="text-[9px] text-slate-500 truncate">Draft state saved</p>
                     </div>
                   </div>
                 </div>
@@ -181,15 +181,15 @@ export function Hero() {
                 {/* Header Strip */}
                 <div className="flex items-center justify-between pb-2.5 border-b border-slate-800/80">
                   <div className="flex items-center gap-2.5">
-                    <Avatar name="Alan Turing" seed="alan" size="sm" isOnline />
+                    <Avatar name="Alex Smith" seed="alex" size="sm" isOnline />
                     <div>
                       <h4 className="text-xs font-bold text-white flex items-center gap-2">
-                        <span>Alan Turing</span>
+                        <span>Alex Smith</span>
                         <span className="text-[8px] font-mono font-bold bg-[#88E788]/20 text-[#88E788] px-1.5 py-0.5 rounded border border-[#88E788]/40">
                           DIRECT CHAT
                         </span>
                       </h4>
-                      <p className="text-[9px] text-slate-400">Senior Systems Architect • Active now</p>
+                      <p className="text-[9px] text-slate-400">+1 555-0192 • Active now</p>
                     </div>
                   </div>
 
@@ -205,10 +205,10 @@ export function Hero() {
                 <div className="space-y-3 py-1 flex-1 justify-end flex flex-col font-sans">
                   {/* Incoming Msg 1 */}
                   <div className="flex items-start gap-2.5">
-                    <Avatar name="Alan Turing" seed="alan" size="sm" />
+                    <Avatar name="Alex Smith" seed="alex" size="sm" />
                     <div className="space-y-1 max-w-[85%] sm:max-w-[75%]">
                       <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs text-slate-200 leading-relaxed shadow-sm">
-                        Hey Ada! I just deployed the updated Socket.io real-time listener handlers to our production cluster.
+                        Hey! I searched users via phone number and started a direct chat stream.
                         <span className="block text-[9px] text-slate-500 mt-1 font-mono">10:42 AM • Delivered</span>
                       </div>
                     </div>
@@ -226,7 +226,7 @@ export function Hero() {
                   <div className="flex items-end justify-end gap-2.5">
                     <div className="space-y-1 max-w-[85%] sm:max-w-[75%] text-right">
                       <div className="bg-[#88E788] text-slate-950 font-semibold p-2.5 rounded-lg text-xs leading-relaxed shadow-sm shadow-[#88E788]/20">
-                        Excellent! RTK Query cache invalidation is streaming incoming messages in real-time. Unsent drafts are persisted automatically.
+                        Great! Unsent drafts are persisted per chat in Redux memory state, and group rules require at least 3 total members.
                         <span className="block text-[9px] text-slate-900 opacity-75 mt-1 font-mono font-bold">10:43 AM • Sent</span>
                       </div>
                     </div>

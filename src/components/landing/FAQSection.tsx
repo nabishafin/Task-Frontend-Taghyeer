@@ -12,27 +12,27 @@ const FAQS: FAQItem[] = [
   {
     question: 'How does user login and registration work?',
     answer:
-      'Pulse uses a streamlined phone number login system. If your phone number is new, the server automatically registers you as a new user with your specified name. No separate registration forms are required!',
+      'VibeWire uses a streamlined phone number login system. If your phone number is new, the server automatically registers you as a new user with your specified name. No separate registration forms are required!',
   },
   {
-    question: 'How do group conversations and admin controls work?',
+    question: 'What are the rules for creating group chats?',
     answer:
-      'You can create a group by selecting at least 2 participants (total 3 members including creator). Group creators automatically become admins and can rename the group, promote other members to admins, add new participants, or remove members.',
+      'When creating a group chat, you must select at least 2 participants (minimum 3 members total including yourself). Groups with less than 2 participants are rejected by backend validation.',
   },
   {
-    question: 'Are messages delivered in real time without refreshing?',
+    question: 'Are messages updated in real-time without refreshing?',
     answer:
-      'Yes! Pulse establishes a bi-directional Socket.io WebSocket connection during login. Incoming messages appear instantly in your active chat and conversation list without manual page refreshes.',
+      'Yes! VibeWire establishes a bi-directional Socket.io WebSocket connection during login. Incoming messages appear instantly in your active chat and conversation list without manual page refreshes.',
   },
   {
-    question: 'What happens if I type a message and switch conversations before sending?',
+    question: 'What happens if I type a message and switch conversations?',
     answer:
-      'Pulse features automatic draft preservation. If you switch to another chat while typing, your unsent text is saved in Redux state and automatically restored when you return to that conversation.',
+      'VibeWire features automatic draft preservation. If you switch to another chat while typing, your unsent text is saved in Redux state and automatically restored when you return to that conversation.',
   },
   {
-    question: 'How does smart auto-scroll work during active messaging?',
+    question: 'How do group admin roles work?',
     answer:
-      'When you are viewing the newest messages near the bottom, incoming messages automatically scroll down smoothly. If you scroll up to review older history, auto-scroll is disabled so your reading position is preserved, and a floating badge alerts you to new incoming messages.',
+      'Group creators are automatically assigned as Admin. Admins can add new members, remove members, and promote other participants to Admin status in real-time.',
   },
 ];
 
@@ -55,7 +55,7 @@ export function FAQSection() {
             Frequently asked questions.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
-            Everything you need to know about Pulse messaging features and architecture.
+            Everything you need to know about VibeWire messaging features and architecture.
           </p>
         </div>
 

@@ -54,7 +54,7 @@ export function SecuritySection() {
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-              Pulse combines state-of-the-art WebSockets with Redux Toolkit cache invalidation to provide a production-ready messaging platform built for high concurrency.
+              VibeWire combines state-of-the-art WebSockets with Redux Toolkit cache invalidation to provide a production-ready messaging platform built for high concurrency.
             </p>
 
             {/* Clean Feature Rows Without Card Boxes */}

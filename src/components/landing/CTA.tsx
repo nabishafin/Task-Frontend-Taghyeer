@@ -16,16 +16,15 @@ export function CTA() {
           <Logo size="xl" variant="light" />
         </div>
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
-          Ready to experience{' '}
-          <span className="text-[#2d8a2d] underline decoration-[#88E788] underline-offset-8">
-            Pulse
+        <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+          Ready to experience real-time chat with{' '}
+          <span className="bg-gradient-to-r from-[#2d8a2d] to-emerald-600 bg-clip-text text-transparent underline decoration-[#88E788]/60 underline-offset-4">
+            VibeWire?
           </span>
-          ?
         </h2>
 
-        <p className="text-xs sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed font-normal">
-          Start direct 1-to-1 messaging or build multi-member group chats with real-time Socket.io synchronization.
+        <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed font-normal">
+          Join users enjoying instant Socket.io WebSocket connections, smart draft preservation, and multi-member group management.
         </p>
 
         <div className="pt-4">

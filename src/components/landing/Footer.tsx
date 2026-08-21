@@ -23,7 +23,7 @@ export function Footer() {
             </Link>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm font-normal">
-              Pulse is a real-time messaging application delivering instant 1-to-1 direct chat, group conversations with administrative controls, smart auto-scroll, and unsent draft recovery.
+              VibeWire is an enterprise real-time messaging application engineered with Socket.io, Next.js 16, and Redux Toolkit Query for sub-10ms direct and group chat streaming.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-2">
@@ -145,7 +145,7 @@ export function Footer() {
         {/* Bottom Sub-Footer Strip */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400 font-medium">
           <p suppressHydrationWarning className="flex items-center gap-1">
-            © {new Date().getFullYear()} Pulse Chat Application. Architected with
+            © {new Date().getFullYear()} VibeWire Chat Application. Architected with
             <Heart className="w-3 h-3 text-rose-500 fill-rose-500 inline mx-0.5" />
             using Next.js & Socket.io.
           </p>

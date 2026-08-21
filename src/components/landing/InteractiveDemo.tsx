@@ -14,7 +14,7 @@ interface ChatMessage {
 const PRESET_QUESTIONS = [
   'How fast is real-time messaging?',
   'Can I create group chats with admins?',
-  'Does Pulse preserve unsent drafts?',
+  'Does VibeWire preserve unsent drafts?',
 ];
 
 export function InteractiveDemo() {
@@ -22,7 +22,7 @@ export function InteractiveDemo() {
     {
       id: '1',
       sender: 'bot',
-      text: 'Hi there! 👋 I am the Pulse Interactive Assistant. Ask me anything about Pulse features or try a preset question below!',
+      text: 'Hi there! 👋 I am the VibeWire Interactive Assistant. Ask me anything about VibeWire features or try a preset question below!',
       time: '10:00 AM',
     },
   ]);
@@ -46,11 +46,11 @@ export function InteractiveDemo() {
     setIsTyping(true);
 
     setTimeout(() => {
-      let replyText = 'Pulse features real-time Socket.io updates, instant user search, and group admin controls!';
+      let replyText = 'VibeWire features real-time Socket.io updates, instant user search, and group admin controls!';
 
       const lower = userText.toLowerCase();
       if (lower.includes('fast') || lower.includes('speed')) {
-        replyText = 'Pulse uses Socket.io WebSocket connections so messages arrive instantly with zero delay! ⚡';
+        replyText = 'VibeWire uses Socket.io WebSocket connections so messages arrive instantly with zero delay! ⚡';
       } else if (lower.includes('group') || lower.includes('admin')) {
         replyText = 'Yes! You can select multiple participants, give your group a name, promote members to admin, and manage participants effortlessly.';
       } else if (lower.includes('draft')) {
@@ -83,7 +83,7 @@ export function InteractiveDemo() {
             <span>Interactive Live Sandbox</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            Try Pulse live in your browser.
+            Try VibeWire live in your browser.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500">
             Click a prompt or type your message below to experience simulated instant replies.
@@ -130,7 +130,7 @@ export function InteractiveDemo() {
             {isTyping && (
               <div className="flex items-center gap-2 text-slate-500 text-xs pl-1">
                 <Bot className="w-4 h-4 text-[#2d8a2d] animate-spin" />
-                <span className="font-semibold">Pulse Assistant is typing...</span>
+                <span className="font-semibold">VibeWire Assistant is typing...</span>
               </div>
             )}
           </div>
@@ -144,7 +144,7 @@ export function InteractiveDemo() {
           >
             <input
               type="text"
-              placeholder="Ask something about Pulse..."
+              placeholder="Ask something about VibeWire..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] transition-all"
@@ -163,7 +163,7 @@ export function InteractiveDemo() {
               href="/chat"
               className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2d8a2d] hover:text-slate-900 group transition-colors"
             >
-              <span>Ready for the real app? Launch Full Pulse Chat</span>
+              <span>Ready for the real app? Launch Full VibeWire Chat</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

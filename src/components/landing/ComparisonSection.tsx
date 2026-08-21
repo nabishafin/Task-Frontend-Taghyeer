@@ -56,7 +56,7 @@ export function ComparisonSection() {
             Built different. See the difference.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
-            Compare traditional REST API polling architectures with Pulse’s event-driven Socket.io streaming pipeline.
+            Compare traditional REST API polling architectures with VibeWire’s event-driven Socket.io streaming pipeline.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function ComparisonSection() {
           <div className="grid grid-cols-12 py-4 text-xs font-mono font-extrabold uppercase tracking-wider text-slate-500 bg-slate-50/50 px-4 rounded-t-xl">
             <div className="col-span-4 sm:col-span-5">Feature Metric</div>
             <div className="col-span-4 sm:col-span-3 text-slate-400">Legacy HTTP Apps</div>
-            <div className="col-span-4 text-[#2d8a2d] font-black">Pulse Messenger</div>
+            <div className="col-span-4 text-[#2d8a2d] font-black">VibeWire Messenger</div>
           </div>
 
           {/* Data Rows */}
