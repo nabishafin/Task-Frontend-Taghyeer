@@ -59,7 +59,7 @@ export function Features() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold tracking-wide uppercase shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-bold tracking-wide uppercase shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>Built for Modern Real-Time Web</span>
           </div>
@@ -80,14 +80,14 @@ export function Features() {
                 key={idx}
                 className="pl-5 border-l-3 border-[#88E788] hover:border-[#2d8a2d] transition-colors space-y-3 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white text-[#2d8a2d] flex items-center justify-center font-bold shadow-xs group-hover:bg-[#88E788] group-hover:text-slate-900 transition-all duration-300">
-                  <Icon className="w-5 h-5" />
+                <div className="w-9 h-9 rounded bg-white text-[#2d8a2d] flex items-center justify-center font-bold shadow-2xs border border-slate-200 group-hover:bg-[#88E788] group-hover:border-[#73db73] group-hover:text-slate-900 transition-all duration-200">
+                  <Icon className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-slate-900 group-hover:text-[#2d8a2d] transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#2d8a2d] transition-colors">
                     {feat.title}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal mt-1.5">
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal mt-1">
                     {feat.description}
                   </p>
                 </div>

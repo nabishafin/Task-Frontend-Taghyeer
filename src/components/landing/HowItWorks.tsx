@@ -36,7 +36,7 @@ export function HowItWorks() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold tracking-wide uppercase shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-bold tracking-wide uppercase shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-[#2d8a2d]" />
             <span>Simple 3-Step Process</span>
           </div>
@@ -58,21 +58,19 @@ export function HowItWorks() {
               const Icon = item.icon;
               return (
                 <div key={idx} className="flex flex-col items-center text-center space-y-4 group">
-                  {/* Step Milestone Circle */}
+                  {/* Step Milestone Indicator */}
                   <div className="relative">
-                    <div className="w-20 h-20 rounded-2xl bg-white border-2 border-slate-200 group-hover:border-[#88E788] shadow-md flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#88E788]/25 bg-gradient-to-b from-white to-slate-50">
-                      <Icon className="w-7 h-7 text-[#2d8a2d] transition-transform group-hover:scale-110" />
-                      <span className="text-[10px] font-black text-slate-400 group-hover:text-[#2d8a2d] mt-1 font-mono">
+                    <div className="w-16 h-16 rounded bg-white border border-slate-200 group-hover:border-[#88E788] shadow-xs flex flex-col items-center justify-center transition-all duration-200">
+                      <Icon className="w-6 h-6 text-[#2d8a2d]" />
+                      <span className="text-[9px] font-bold text-slate-400 group-hover:text-[#2d8a2d] mt-1 font-mono">
                         STEP {item.step}
                       </span>
                     </div>
-                    {/* Pulsing ring indicator */}
-                    <div className="absolute -inset-1 rounded-2xl bg-[#88E788]/30 opacity-0 group-hover:opacity-100 blur-md transition-opacity -z-10" />
                   </div>
 
                   {/* Clean Content Without Card Container */}
-                  <div className="space-y-2 max-w-xs">
-                    <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#2d8a2d] transition-colors">
+                  <div className="space-y-1.5 max-w-xs">
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#2d8a2d] transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed font-normal">

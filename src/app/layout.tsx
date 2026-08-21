@@ -64,6 +64,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Toaster } from 'react-hot-toast';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,7 +74,36 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${inter.className}`}>
       <body className={`${inter.className} antialiased bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900`}>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          {children}
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#0f172a',
+                color: '#f8fafc',
+                border: '1px solid rgba(136, 231, 136, 0.4)',
+                borderRadius: '0.75rem',
+                fontSize: '0.825rem',
+                fontWeight: '600',
+                boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+              },
+              success: {
+                iconTheme: {
+                  primary: '#88E788',
+                  secondary: '#0f172a',
+                },
+              },
+              error: {
+                iconTheme: {
+                  primary: '#f43f5e',
+                  secondary: '#0f172a',
+                },
+              },
+            }}
+          />
+        </ReduxProvider>
       </body>
     </html>
   );

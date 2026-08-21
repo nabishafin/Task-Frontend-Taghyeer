@@ -51,8 +51,8 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${scrolled
-          ? 'border-b border-slate-200/80 bg-white/90 py-2 shadow-lg shadow-emerald-500/5 backdrop-blur-2xl'
-          : 'border-b border-slate-100/80 bg-white/80 py-2.5 sm:py-3 backdrop-blur-xl'
+        ? 'border-b border-slate-200/80 bg-white/90 py-2 shadow-lg shadow-emerald-500/5 backdrop-blur-2xl'
+        : 'border-b border-slate-100/80 bg-white/80 py-2.5 sm:py-3 backdrop-blur-xl'
         }`}
     >
       {/* Glossy top highlight */}
@@ -148,8 +148,8 @@ export function Navbar() {
       {/* Mobile / Tablet Menu */}
       <div
         className={`absolute left-0 right-0 top-full overflow-hidden border-b border-slate-200/90 bg-white/95 backdrop-blur-2xl transition-all duration-300 md:hidden ${mobileMenuOpen
-            ? 'visible max-h-[calc(100vh-60px)] opacity-100'
-            : 'invisible max-h-0 opacity-0'
+          ? 'visible max-h-[calc(100vh-60px)] opacity-100'
+          : 'invisible max-h-0 opacity-0'
           }`}
       >
         <div className="max-h-[calc(100vh-60px)] overflow-y-auto px-3 py-3 sm:px-5 sm:py-4">

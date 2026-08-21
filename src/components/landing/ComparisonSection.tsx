@@ -61,7 +61,7 @@ export function ComparisonSection() {
         </div>
 
         {/* Minimal Horizontal Table Matrix with Responsive Mobile Scroll */}
-        <div className="overflow-x-auto -mx-4 sm:mx-0 rounded-xl border border-slate-200 shadow-xs">
+        <div className="overflow-x-auto -mx-4 sm:mx-0 rounded border border-slate-200 shadow-2xs">
           <div className="min-w-[640px] divide-y divide-slate-200">
             {/* Header Row */}
             <div className="grid grid-cols-12 py-4 text-xs font-mono font-extrabold uppercase tracking-wider text-slate-500 bg-slate-50/80 px-4">

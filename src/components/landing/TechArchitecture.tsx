@@ -68,11 +68,12 @@ export function TechArchitecture() {
   const IconComponent = activeStep.icon;
 
   return (
-    <section id="architecture" className="py-12 md:py-16 bg-slate-900 text-slate-100 border-b border-slate-800 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#88E788]/10 rounded-full blur-[140px] pointer-events-none" />
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-5 md:px-6 lg:px-8 py-4">
+      <section id="architecture" className="relative w-full rounded-2xl pt-10 pb-8 md:pt-14 md:pb-10 px-4 sm:px-6 md:px-8 bg-slate-950 text-slate-100 overflow-hidden border border-slate-800 shadow-xl shadow-slate-950/20 selection:bg-[#88E788] selection:text-slate-900">
+        {/* Background ambient lighting */}
+        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#88E788]/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-full relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
@@ -100,14 +101,14 @@ export function TechArchitecture() {
                 <button
                   key={step.id}
                   onClick={() => setActiveTab(idx)}
-                  className={`w-full text-left p-3.5 rounded-xl transition-all flex items-start gap-3.5 cursor-pointer ${
+                  className={`w-full text-left p-3 rounded transition-all flex items-start gap-3 cursor-pointer ${
                     isActive
-                      ? 'bg-slate-800/90 border-l-4 border-[#88E788] text-white shadow-lg'
+                      ? 'bg-slate-800/90 border-l-4 border-[#88E788] text-white shadow-md'
                       : 'bg-transparent border-l-2 border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
                   }`}
                 >
                   <div
-                    className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 font-bold ${
+                    className={`w-8 h-8 rounded flex items-center justify-center shrink-0 font-bold ${
                       isActive ? 'bg-[#88E788] text-slate-900' : 'bg-slate-800 text-slate-400'
                     }`}
                   >
@@ -121,7 +122,7 @@ export function TechArchitecture() {
                       </span>
                       <span className="text-[10px] font-mono text-slate-500">{step.metrics}</span>
                     </div>
-                    <h3 className="text-xs font-extrabold text-white truncate">{step.title}</h3>
+                    <h3 className="text-xs font-bold text-white truncate">{step.title}</h3>
                   </div>
                 </button>
               );
@@ -130,14 +131,14 @@ export function TechArchitecture() {
 
           {/* Right Column: Code Architecture Display */}
           <div className="lg:col-span-7 space-y-4">
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-5 sm:p-6 space-y-4 shadow-xl">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div className="bg-slate-950 border border-slate-800 rounded p-4 sm:p-5 space-y-4 shadow-lg">
+              <div className="flex items-center justify-between pb-3.5 border-b border-slate-800">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#88E788]/20 border border-[#88E788]/50 flex items-center justify-center text-[#88E788]">
-                    <IconComponent className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded bg-[#88E788]/20 border border-[#88E788]/50 flex items-center justify-center text-[#88E788]">
+                    <IconComponent className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-extrabold text-white">{activeStep.title}</h4>
+                    <h4 className="text-sm font-bold text-white">{activeStep.title}</h4>
                     <span className="text-[10px] font-mono text-[#88E788]">{activeStep.badge}</span>
                   </div>
                 </div>
@@ -175,5 +176,6 @@ export function TechArchitecture() {
 
       </div>
     </section>
-  );
+  </div>
+);
 }

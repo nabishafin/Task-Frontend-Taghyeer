@@ -14,25 +14,29 @@ import { FAQSection } from '@/components/landing/FAQSection';
 import { CTA } from '@/components/landing/CTA';
 import { Footer } from '@/components/landing/Footer';
 
+import { SmoothScrollProvider } from '@/components/ui/SmoothScrollProvider';
+
 export default function LandingPage() {
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900 font-sans relative">
-      <Navbar />
-      <main className="w-full max-w-full overflow-x-hidden">
-        <Hero />
-        <HowItWorks />
-        <Features />
-        <Showcase />
-        <RichMediaSection />
-        <TechArchitecture />
-        <SecuritySection />
-        <ComparisonSection />
-        <InteractiveDemo />
-        <FAQSection />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <SmoothScrollProvider>
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900 font-sans relative">
+        <Navbar />
+        <main className="w-full max-w-full overflow-x-hidden">
+          <Hero />
+          <HowItWorks />
+          <Features />
+          <Showcase />
+          <RichMediaSection />
+          <TechArchitecture />
+          <SecuritySection />
+          <ComparisonSection />
+          <InteractiveDemo />
+          <FAQSection />
+          <CTA />
+        </main>
+        <Footer />
+      </div>
+    </SmoothScrollProvider>
   );
 }
 

@@ -30,7 +30,7 @@ export function CTA() {
         <div className="pt-4">
           <Link
             href="/chat"
-            className="inline-flex items-center justify-center gap-3 text-base font-extrabold text-slate-900 bg-[#88E788] hover:bg-[#73db73] px-9 py-4.5 rounded-2xl shadow-xl shadow-[#88E788]/40 transition-all hover:scale-105 active:scale-95"
+            className="inline-flex items-center justify-center gap-2.5 text-sm font-bold text-slate-950 bg-[#88E788] hover:bg-[#73db73] px-7 py-3.5 rounded shadow-sm hover:shadow transition-all border border-[#7ae67a]"
           >
             <Sparkles className="w-5 h-5 text-[#2d8a2d]" />
             <span>Launch Chat Application</span>

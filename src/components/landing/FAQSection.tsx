@@ -67,7 +67,7 @@ export function FAQSection() {
               <div key={idx} className="py-5 transition-colors group">
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between text-left font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-[#2d8a2d] transition-colors gap-4"
+                  className="w-full flex items-center justify-between text-left font-bold text-sm sm:text-base text-slate-900 group-hover:text-[#2d8a2d] transition-colors gap-4"
                 >
                   <span>{faq.question}</span>
                   <div className={`p-1.5 rounded-full transition-transform duration-300 ${isOpen ? 'bg-[#88E788] text-slate-900 rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'}`}>

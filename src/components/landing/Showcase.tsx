@@ -27,12 +27,12 @@ export function Showcase() {
             Switch between Direct and Group conversation modes to see the real UI layout.
           </p>
 
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-100/90 border border-slate-200 gap-1.5 mt-4 shadow-2xs">
+          <div className="inline-flex p-1 rounded bg-slate-100 border border-slate-200 gap-1 mt-4 shadow-2xs">
             <button
               onClick={() => setActiveTab('direct')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 rounded text-xs font-bold transition-all ${
                 activeTab === 'direct'
-                  ? 'bg-[#88E788] text-slate-900 shadow-md shadow-[#88E788]/30 border border-[#6cd86c]'
+                  ? 'bg-[#88E788] text-slate-950 shadow-2xs border border-[#6cd86c]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -41,9 +41,9 @@ export function Showcase() {
             </button>
             <button
               onClick={() => setActiveTab('group')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 rounded text-xs font-bold transition-all ${
                 activeTab === 'group'
-                  ? 'bg-[#88E788] text-slate-900 shadow-md shadow-[#88E788]/30 border border-[#6cd86c]'
+                  ? 'bg-[#88E788] text-slate-950 shadow-2xs border border-[#6cd86c]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -53,8 +53,8 @@ export function Showcase() {
           </div>
         </div>
 
-        {/* Integrated Showcase Device Frame */}
-        <div className="max-w-6xl mx-auto rounded-xl bg-slate-900 p-2 sm:p-2.5 shadow-xl shadow-slate-900/20 border border-slate-800">
+        {/* Integrated Showcase Device Frame - Flat Minimal Edges */}
+        <div className="max-w-6xl mx-auto rounded bg-slate-900 p-1.5 sm:p-2 shadow-lg border border-slate-800">
           {/* Top Address Bar */}
           <div className="px-4 py-2 bg-slate-900 rounded-t-lg flex items-center justify-between border-b border-slate-800">
             <div className="flex items-center gap-1.5">
