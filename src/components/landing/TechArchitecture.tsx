@@ -68,12 +68,12 @@ export function TechArchitecture() {
   const IconComponent = activeStep.icon;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-3 sm:px-5 md:px-6 lg:px-8 py-4">
-      <section id="architecture" className="relative w-full rounded-2xl pt-10 pb-8 md:pt-14 md:pb-10 px-4 sm:px-6 md:px-8 bg-slate-950 text-slate-100 overflow-hidden border border-slate-800 shadow-xl shadow-slate-950/20 selection:bg-[#88E788] selection:text-slate-900">
+    <div className="w-full max-w-full px-2 sm:px-3 md:px-4 lg:px-5 py-3 bg-slate-100/70">
+      <section id="architecture" className="relative w-full max-w-full rounded-2xl pt-10 pb-8 md:pt-14 md:pb-10 px-4 sm:px-8 md:px-12 bg-slate-950 text-slate-100 overflow-hidden border border-slate-800 shadow-xl shadow-slate-950/20 selection:bg-[#88E788] selection:text-slate-900">
         {/* Background ambient lighting */}
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#88E788]/10 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="w-full max-w-full relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">

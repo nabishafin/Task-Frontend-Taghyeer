@@ -9,9 +9,9 @@ import { Avatar } from '@/components/ui/Avatar';
 export function Hero() {
   return (
     <div className="w-full max-w-full px-2 sm:px-3 md:px-4 lg:px-5 pt-16 sm:pt-20 pb-3 bg-slate-100/70">
-      <section className="relative w-full max-w-full rounded-2xl pt-10 pb-8 md:pt-14 md:pb-10 px-3 sm:px-6 md:px-8 bg-white text-slate-900 overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/5 selection:bg-[#88E788] selection:text-slate-900">
+      <section className="relative w-full max-w-full rounded-2xl pt-10 pb-8 md:pt-14 md:pb-10 px-3 sm:px-6 md:px-8 bg-slate-950 text-slate-100 overflow-hidden border border-slate-800 shadow-2xl shadow-slate-950/40 selection:bg-[#88E788] selection:text-slate-950">
         {/* 1st Premium Transparent High-Tech Background Waves Overlay */}
-        <div className="absolute inset-0 w-full h-full z-0 opacity-35 pointer-events-none mix-blend-multiply overflow-hidden rounded-2xl">
+        <div className="absolute inset-0 w-full h-full z-0 opacity-25 pointer-events-none mix-blend-screen overflow-hidden rounded-2xl">
           <Image
             src="/images/hero_transparent_bg.jpg"
             alt="Transparent High-Tech Background Waves"
@@ -22,22 +22,22 @@ export function Hero() {
         </div>
 
         {/* Crisp glowing accent ambient light */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#88E788]/20 rounded-full blur-[130px] pointer-events-none animate-pulse" />
-        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-emerald-400/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#88E788]/15 rounded-full blur-[140px] pointer-events-none animate-pulse" />
+        <div className="absolute top-10 right-10 w-[380px] h-[380px] bg-emerald-400/10 rounded-full blur-[110px] pointer-events-none" />
 
         <div className="relative z-10">
 
           {/* Header & Typography */}
           <div className="text-center max-w-2xl mx-auto space-y-3.5">
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.18]">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.18]">
               Real-time conversations that keep your team{' '}
-              <span className="bg-gradient-to-r from-[#2d8a2d] to-emerald-600 bg-clip-text text-transparent underline decoration-[#88E788]/60 underline-offset-4 font-bold">
+              <span className="bg-gradient-to-r from-[#88E788] via-emerald-300 to-emerald-400 bg-clip-text text-transparent underline decoration-[#88E788]/60 underline-offset-4 font-bold">
                 always connected.
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
               VibeWire delivers instant 1-to-1 direct messaging, multi-member group channels, high-res photo sharing, and zero unsent draft loss powered by sub-10ms Socket.io stream.
             </p>
 
@@ -45,38 +45,38 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
               <Link
                 href="/chat"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-slate-950 bg-[#88E788] hover:bg-[#73db73] px-6 py-2.5 rounded shadow-sm hover:shadow transition-all border border-[#7ae67a]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-slate-950 bg-[#88E788] hover:bg-[#73db73] px-6 py-2.5 rounded shadow-lg shadow-[#88E788]/20 transition-all border border-[#7ae67a]"
               >
-                <Sparkles className="w-4 h-4 text-[#2d8a2d]" />
+                <Sparkles className="w-4 h-4 text-slate-950" />
                 <span>Launch VibeWire Messenger</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
                 href="/login"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-5 py-2.5 rounded transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded transition-all"
               >
                 <span>Quick 1-Click Demo Login</span>
               </Link>
             </div>
 
             {/* Minimal Badges */}
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-[11px] font-mono text-slate-600 font-medium">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-[11px] font-mono text-slate-400 font-medium">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Socket.io Bidirectional
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#88E788]" /> Socket.io Bidirectional
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Group Admin Roles
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#88E788]" /> Group Admin Roles
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Smart Auto-Scroll
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#88E788]" /> Smart Auto-Scroll
               </span>
             </div>
 
           </div>
 
-          {/* Minimal App Mockup Frame - Exact Width Matching Navbar (max-w-6xl) */}
-          <div className="mt-8 max-w-6xl mx-auto relative p-2.5 sm:p-4 md:p-5 rounded-2xl bg-slate-100/80 border border-slate-200/90 shadow-lg backdrop-blur-sm">
+          {/* Minimal App Mockup Frame - Dark High-Tech Container */}
+          <div className="mt-8 max-w-6xl mx-auto relative p-2.5 sm:p-4 md:p-5 rounded-2xl bg-slate-900/90 border border-slate-800/90 shadow-xl backdrop-blur-md">
 
             {/* Main App Mockup Frame */}
             <div className="relative rounded-xl bg-slate-950 p-1.5 sm:p-2 border border-slate-800 shadow-xl overflow-hidden">
