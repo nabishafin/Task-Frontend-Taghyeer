@@ -8,51 +8,56 @@ import {
   ArrowDownCircle,
   FileText,
   Search,
+  ShieldCheck,
 } from 'lucide-react';
 
 const FEATURES = [
   {
     icon: Zap,
-    title: 'Real-Time Sync',
-    description: 'Powered by Socket.io for instant message delivery without manual page refreshes.',
+    title: 'Real-Time Socket.io Sync',
+    description: 'Bi-directional WebSocket streaming ensures messages deliver instantly with zero latency across all devices.',
   },
   {
     icon: UserCheck,
     title: 'Private 1-to-1 Chat',
-    description: 'Seamless direct messaging between users with phone & name search.',
+    description: 'Instant direct messaging between users with fast phone & name search.',
   },
   {
     icon: Users,
-    title: 'Group Conversations',
-    description: 'Create multi-member groups, assign admin roles, rename, and add members effortlessly.',
+    title: 'Group Conversations & Admin Roles',
+    description: 'Build multi-member group chats, designate admins, add participants, rename groups, or leave seamlessly.',
   },
   {
     icon: ArrowDownCircle,
-    title: 'Smart Auto-Scroll',
-    description: 'Intelligent scroll behavior that automatically scrolls when near bottom or alerts with a floating new message pill.',
+    title: 'Smart Auto-Scroll & Counter',
+    description: 'Automatically scrolls when near the bottom, or displays a floating new-message counter when viewing older history.',
   },
   {
     icon: FileText,
-    title: 'Draft Preservation',
-    description: 'Switching chats never loses your typed text. Drafts are safely preserved per conversation.',
+    title: 'Draft Text Preservation',
+    description: 'Switching between chats never loses your input. Drafts are safely preserved in Redux state per conversation.',
   },
   {
     icon: Search,
-    title: 'Instant Debounced Search',
-    description: 'Find any user instantly by phone number or name with debounced API queries.',
+    title: 'Debounced User Search',
+    description: 'Find any user by phone number or name with debounced API queries for optimal performance.',
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-slate-50 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-2 max-w-3xl mx-auto mb-14">
-          <h2 className="text-xs font-extrabold uppercase tracking-wider text-[#2d8a2d]">
-            Core Features
-          </h2>
-          <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+    <section id="features" className="py-24 bg-slate-50 text-slate-900 border-b border-slate-200 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00897b]/15 border border-[#00897b]/40 text-[#00897b] text-xs font-bold shadow-2xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#00897b]" />
+            <span>Built for Modern Real-Time Web</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Everything required for modern communication.
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
+            Architected with Next.js 16, RTK Query, Socket.io, and Tailwind CSS for peak performance and strict type safety.
           </p>
         </div>
 
@@ -62,13 +67,15 @@ export function Features() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs hover:shadow-xs transition-all"
+                className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-[#00897b] transition-all duration-300 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#88E788]/30 border border-[#88E788] flex items-center justify-center text-slate-900 mb-4">
-                  <Icon className="w-5 h-5 text-[#2d8a2d]" />
+                <div className="w-12 h-12 rounded-2xl bg-[#00897b]/15 border border-[#00897b]/30 flex items-center justify-center text-[#00897b] mb-5 group-hover:scale-110 group-hover:bg-[#00897b] group-hover:text-white transition-all shadow-2xs">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-1">{feat.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#00897b] transition-colors">
+                  {feat.title}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   {feat.description}
                 </p>
               </div>

@@ -3,10 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --accent-green: #88E788;
-  --accent-green-hover: #73db73;
-  --accent-green-dark: #2d8a2d;
-  --accent-green-light: #f0fdf0;
+  --accent-teal: #00897b;
+  --accent-teal-hover: #00796b;
+  --accent-teal-dark: #004d40;
+  --accent-teal-light: #e0f2f1;
   --surface-light: #f8fafc;
   --border-light: #e2e8f0;
 }
@@ -31,5 +31,5 @@ body {
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #88E788;
+  background: #00897b;
 }

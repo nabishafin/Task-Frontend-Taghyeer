@@ -133,7 +133,7 @@ export function GroupManageModal() {
                 <button
                   type="submit"
                   disabled={isRenaming}
-                  className="p-1 rounded-lg bg-[#88E788] text-slate-900 hover:bg-[#73db73]"
+                  className="p-1 rounded-lg bg-[#00897b] text-white hover:bg-[#00796b]"
                 >
                   {isRenaming ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Check className="w-3.5 h-3.5" />}
                 </button>
@@ -169,7 +169,7 @@ export function GroupManageModal() {
             {isAdmin && (
               <button
                 onClick={() => setIsAddMemberOpen(!isAddMemberOpen)}
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#2d8a2d] hover:underline"
+                className="inline-flex items-center gap-1 text-xs font-bold text-[#00897b] hover:underline"
               >
                 <UserPlus className="w-3.5 h-3.5" />
                 {isAddMemberOpen ? 'Close Search' : 'Add Member'}
@@ -207,7 +207,7 @@ export function GroupManageModal() {
                       <button
                         onClick={() => handleAddMember(u._id)}
                         disabled={isAdding}
-                        className="text-xs font-bold text-[#2d8a2d] hover:underline"
+                        className="text-xs font-bold text-[#00897b] hover:underline"
                       >
                         + Add
                       </button>

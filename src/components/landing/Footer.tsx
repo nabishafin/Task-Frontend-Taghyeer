@@ -2,26 +2,21 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { MessageSquare } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 py-10 text-slate-600 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-[#88E788] text-slate-900 flex items-center justify-center font-bold">
-            <MessageSquare className="w-3.5 h-3.5" />
-          </div>
-          <span className="text-sm font-bold text-slate-900 tracking-tight">
-            Pulse<span className="text-[#2d8a2d]">.</span>
-          </span>
-        </div>
+    <footer className="bg-slate-50 border-t border-slate-200 py-12 text-slate-600 text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <Link href="/">
+          <Logo size="sm" variant="light" />
+        </Link>
 
-        <p suppressHydrationWarning>
+        <p suppressHydrationWarning className="text-slate-500 font-medium">
           © {new Date().getFullYear()} Pulse Chat Application. Built with Next.js, Redux Toolkit & Socket.io.
         </p>
 
-        <div className="flex items-center gap-5 font-semibold text-slate-600">
+        <div className="flex items-center gap-6 font-bold text-slate-600">
           <Link href="/login" className="hover:text-slate-900 transition-colors">
             Login
           </Link>

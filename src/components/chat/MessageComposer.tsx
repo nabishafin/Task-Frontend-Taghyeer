@@ -85,7 +85,7 @@ export function MessageComposer() {
         </div>
       )}
 
-      <div className="flex items-end gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-[#88E788] focus-within:border-[#88E788] transition-all">
+      <div className="flex items-end gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-[#00897b] focus-within:border-[#00897b] transition-all">
         <textarea
           ref={textareaRef}
           rows={1}
@@ -100,10 +100,10 @@ export function MessageComposer() {
           onClick={handleSend}
           disabled={!canSend}
           title="Send message (Enter)"
-          className="p-2 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 font-bold disabled:opacity-40 disabled:hover:bg-[#88E788] disabled:cursor-not-allowed transition-all shadow-2xs shrink-0"
+          className="p-2 rounded-xl bg-[#00897b] hover:bg-[#00796b] text-white font-bold disabled:opacity-40 disabled:hover:bg-[#00897b] disabled:cursor-not-allowed transition-all shadow-2xs shrink-0"
         >
           {isLoading ? (
-            <Loader2 className="w-4 h-4 animate-spin text-slate-900" />
+            <Loader2 className="w-4 h-4 animate-spin text-white" />
           ) : (
             <Send className="w-4 h-4" />
           )}

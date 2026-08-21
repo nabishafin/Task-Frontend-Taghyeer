@@ -87,7 +87,7 @@ export function MessageList() {
           </div>
         ) : messages.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-2 text-slate-400">
-            <div className="w-10 h-10 rounded-xl bg-[#88E788]/20 text-[#2d8a2d] border border-[#88E788]/40 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#00897b]/15 text-[#00897b] border border-[#00897b]/30 flex items-center justify-center">
               <Sparkles className="w-5 h-5" />
             </div>
             <div className="space-y-0.5">
@@ -118,7 +118,7 @@ export function MessageList() {
             const isSelf = getSenderId(msg) === currentUser?._id;
 
             return (
-              <React.Fragment key={msg._id}>
+              <React.Fragment key={msg._id || `msg-${index}-${msg.createdAt}`}>
                 {showDateSeparator && (
                   <div className="flex items-center my-4">
                     <div className="flex-1 border-t border-slate-200" />

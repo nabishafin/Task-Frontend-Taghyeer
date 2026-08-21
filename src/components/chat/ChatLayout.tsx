@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/redux/store';
+import { setIsSearchOpen, setIsGroupModalOpen } from '@/redux/chatSlice';
 import { SidebarHeader } from './SidebarHeader';
 import { ConversationList } from './ConversationList';
 import { MessageHeader } from './MessageHeader';
@@ -11,14 +12,17 @@ import { MessageComposer } from './MessageComposer';
 import { SearchModal } from './SearchModal';
 import { GroupCreateModal } from './GroupCreateModal';
 import { GroupManageModal } from './GroupManageModal';
+import { Logo } from '@/components/ui/Logo';
+import { UserPlus, Users, MessageSquare } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
 export function ChatLayout() {
+  const dispatch = useDispatch();
   const mobileView = useSelector((state: RootState) => state.chat.mobileView);
   const activeId = useSelector((state: RootState) => state.chat.activeConversationId);
 
   return (
-    <div className="h-screen w-screen bg-slate-100 text-slate-900 flex overflow-hidden selection:bg-[#88E788] selection:text-slate-900">
+    <div className="h-screen w-screen bg-slate-100 text-slate-900 flex overflow-hidden selection:bg-[#00897b] selection:text-white">
       <div
         className={cn(
           'w-full md:w-80 lg:w-96 border-r border-slate-200 flex flex-col h-full shrink-0 bg-white transition-all duration-300',
@@ -44,17 +48,30 @@ export function ChatLayout() {
             <MessageComposer key={activeId} />
           </>
         ) : (
-          <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-400 space-y-3 bg-slate-50/50">
-            <div className="w-16 h-16 rounded-3xl bg-white border border-slate-200 flex items-center justify-center text-[#2d8a2d] shadow-xs">
-              <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
-                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z" />
-              </svg>
-            </div>
-            <div className="space-y-0.5">
-              <h3 className="text-sm font-bold text-slate-800">No chat selected</h3>
-              <p className="text-xs text-slate-500 max-w-xs">
-                Select a conversation from the sidebar or start a new direct chat to begin messaging.
+          <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-400 space-y-4 bg-slate-50/50">
+            <Logo size="lg" variant="light" />
+            <div className="space-y-1 max-w-sm">
+              <h3 className="text-base font-extrabold text-slate-900">Welcome to Pulse Messenger</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Select a conversation from the sidebar or click below to start a new chat or group.
               </p>
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={() => dispatch(setIsSearchOpen(true))}
+                className="inline-flex items-center gap-2 text-xs font-bold bg-[#00897b] hover:bg-[#00796b] text-white px-4 py-2.5 rounded-xl shadow-xs transition-all"
+              >
+                <UserPlus className="w-4 h-4" />
+                <span>Start Direct Chat</span>
+              </button>
+              <button
+                onClick={() => dispatch(setIsGroupModalOpen(true))}
+                className="inline-flex items-center gap-2 text-xs font-bold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl shadow-xs transition-all"
+              >
+                <Users className="w-4 h-4 text-[#00897b]" />
+                <span>Create Group</span>
+              </button>
             </div>
           </div>
         )}

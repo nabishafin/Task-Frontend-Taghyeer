@@ -63,7 +63,7 @@ export function SearchModal() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
-            className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-10 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788]"
+            className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-10 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00897b]"
           />
           {isLoading && (
             <Loader2 className="w-4 h-4 absolute right-3.5 top-1/2 -translate-y-1/2 animate-spin text-slate-600" />
@@ -105,14 +105,14 @@ export function SearchModal() {
                 <div className="flex items-center gap-3">
                   <Avatar name={u.name} seed={u._id} size="md" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 group-hover:text-[#2d8a2d] transition-colors">
+                    <h4 className="text-xs font-bold text-slate-900 group-hover:text-[#00897b] transition-colors">
                       {u.name}
                     </h4>
                     <p className="text-[11px] text-slate-500">{u.phone}</p>
                   </div>
                 </div>
 
-                <div className="p-1.5 rounded-lg bg-[#88E788] text-slate-900 font-bold group-hover:bg-[#73db73] transition-all">
+                <div className="p-1.5 rounded-lg bg-[#00897b] text-white font-bold group-hover:bg-[#00796b] transition-all">
                   <MessageSquarePlus className="w-4 h-4" />
                 </div>
               </button>
