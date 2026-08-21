@@ -5,7 +5,9 @@ import { Hero } from '@/components/landing/Hero';
 import { HowItWorks } from '@/components/landing/HowItWorks';
 import { Features } from '@/components/landing/Features';
 import { Showcase } from '@/components/landing/Showcase';
+import { TechArchitecture } from '@/components/landing/TechArchitecture';
 import { SecuritySection } from '@/components/landing/SecuritySection';
+import { ComparisonSection } from '@/components/landing/ComparisonSection';
 import { InteractiveDemo } from '@/components/landing/InteractiveDemo';
 import { FAQSection } from '@/components/landing/FAQSection';
 import { CTA } from '@/components/landing/CTA';
@@ -22,7 +24,9 @@ export default function LandingPage() {
         </div>
         <Features />
         <Showcase />
+        <TechArchitecture />
         <SecuritySection />
+        <ComparisonSection />
         <InteractiveDemo />
         <FAQSection />
         <CTA />
@@ -31,3 +35,4 @@ export default function LandingPage() {
     </div>
   );
 }
+

@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
+import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ReduxProvider } from '@/redux/provider';
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Pulse — Real-Time Chat Application',
@@ -14,10 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900">
+    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${spaceGrotesk.className}`}>
+      <body className={`${spaceGrotesk.className} antialiased bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900`}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
 }
+
+
