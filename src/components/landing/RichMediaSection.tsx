@@ -54,11 +54,11 @@ export function RichMediaSection() {
           </p>
         </div>
 
-        {/* Split Grid Layout: Interactive Chat Stream vs Features */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Split Grid Layout: Interactive Chat Stream vs Features (50/50 Equal Width Split) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: Live Rich Media Conversation Feed (8 Columns on lg) */}
-          <div className="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-xl p-4 sm:p-5 text-slate-100 shadow-xl space-y-4">
+          {/* Left Column: Live Rich Media Conversation Feed (50% Width) */}
+          <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 sm:p-5 text-slate-100 shadow-xl space-y-4 flex flex-col justify-between">
             
             {/* Header Strip */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
@@ -82,12 +82,12 @@ export function RichMediaSection() {
             </div>
 
             {/* Conversation Feed with Images & Voice Notes */}
-            <div className="space-y-4 font-sans text-xs">
+            <div className="space-y-4 font-sans text-xs flex-1 flex flex-col justify-center">
               
               {/* Friend Message 1: Text + High-Res Image Preview */}
               <div className="flex items-start gap-3">
                 <Avatar name="Alex Smith" seed="alex" size="sm" isOnline />
-                <div className="space-y-2 max-w-[88%] sm:max-w-[80%]">
+                <div className="space-y-2 max-w-[88%] sm:max-w-[85%]">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-slate-200">Alex Smith</span>
                     <span className="text-[9px] text-slate-500 font-mono">10:45 AM</span>
@@ -161,36 +161,17 @@ export function RichMediaSection() {
                 </div>
               </div>
 
-              {/* Friend Message 2: Team Collaboration Photo */}
+              {/* Friend Message 2: Clean Text Reply */}
               <div className="flex items-start gap-3 pt-1">
                 <Avatar name="Sarah Jenkins" seed="sarah" size="sm" isOnline />
-                <div className="space-y-2 max-w-[88%] sm:max-w-[80%]">
+                <div className="space-y-1 max-w-[88%] sm:max-w-[85%]">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-slate-200">Sarah Jenkins</span>
                     <span className="text-[9px] text-slate-500 font-mono">10:46 AM</span>
                   </div>
 
-                  <div className="bg-slate-900 border border-slate-800 p-3 rounded-lg space-y-2.5">
-                    <p className="text-slate-300 leading-relaxed">
-                      Looks incredible! Here is our team photo from the sprint review meeting 📸
-                    </p>
-
-                    <div
-                      onClick={() => setActiveImageModal('/images/group_collaboration.jpg')}
-                      className="relative rounded-lg overflow-hidden border border-slate-800 group/img cursor-pointer bg-slate-950 aspect-[16/9]"
-                    >
-                      <Image
-                        src="/images/group_collaboration.jpg"
-                        alt="Team Collaboration Photo"
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover/img:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                        <span className="bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700 flex items-center gap-1 shadow-lg">
-                          <Maximize2 className="w-3 h-3 text-[#88E788]" /> Expand Photo
-                        </span>
-                      </div>
-                    </div>
+                  <div className="bg-slate-900/90 border border-slate-800 p-2.5 rounded-lg text-[#88E788] font-medium leading-relaxed">
+                    Looks incredible! The high-res team photo and live stream came out super sharp! 🔥
                   </div>
                 </div>
               </div>
@@ -198,7 +179,7 @@ export function RichMediaSection() {
               {/* Friend Message 3: Voice Note Waveform */}
               <div className="flex items-start gap-3 pt-1">
                 <Avatar name="Michael Chen" seed="michael" size="sm" isOnline />
-                <div className="space-y-1.5 max-w-[88%] sm:max-w-[75%]">
+                <div className="space-y-1.5 max-w-[88%] sm:max-w-[80%]">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-slate-200">Michael Chen</span>
                     <span className="text-[9px] text-slate-500 font-mono">10:47 AM</span>
@@ -209,7 +190,7 @@ export function RichMediaSection() {
                       <Play className="w-4 h-4 text-slate-950 fill-slate-950 ml-0.5" />
                     </button>
 
-                    <div className="flex-1 space-y-1">
+                    <div className="flex-1 space-y-1 min-w-0">
                       <div className="flex items-center justify-between text-[9px] font-mono text-slate-400">
                         <span className="text-[#88E788] font-bold flex items-center gap-1">
                           <Volume2 className="w-3 h-3" /> Voice Memo
@@ -218,12 +199,12 @@ export function RichMediaSection() {
                       </div>
                       
                       {/* Waveform graphic */}
-                      <div className="flex items-center gap-0.5 h-4">
+                      <div className="flex items-center gap-0.5 h-4 overflow-hidden">
                         {[40, 70, 30, 90, 60, 100, 45, 80, 55, 90, 75, 40, 85, 95, 60, 30, 70, 85, 40, 60].map((h, i) => (
                           <span
                             key={i}
                             style={{ height: `${h}%` }}
-                            className={`w-1 rounded-full ${i < 8 ? 'bg-[#88E788]' : 'bg-slate-700'}`}
+                            className={`w-1 shrink-0 rounded-full ${i < 8 ? 'bg-[#88E788]' : 'bg-slate-700'}`}
                           />
                         ))}
                       </div>
@@ -236,15 +217,15 @@ export function RichMediaSection() {
 
           </div>
 
-          {/* Right Column: Key Feature Highlights (5 Columns on lg) */}
-          <div className="lg:col-span-5 space-y-5">
+          {/* Right Column: Key Feature Highlights (50% Width) */}
+          <div className="flex flex-col justify-between space-y-4">
             
-            <div className="space-y-4">
-              <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+            <div className="space-y-3.5 flex-1 flex flex-col justify-center">
+              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
                 <div className="w-9 h-9 rounded-lg bg-[#88E788]/30 border border-[#88E788]/60 text-[#2d8a2d] flex items-center justify-center font-bold shrink-0">
                   <ImageIcon className="w-4 h-4" />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 min-w-0">
                   <h4 className="text-xs font-bold text-slate-900">High-Res Image Attachments</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Share photos, infographics, and UI mockups with instant inline previews and expandable Lightbox view.
@@ -252,11 +233,11 @@ export function RichMediaSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
                 <div className="w-9 h-9 rounded-lg bg-[#88E788]/30 border border-[#88E788]/60 text-[#2d8a2d] flex items-center justify-center font-bold shrink-0">
                   <Heart className="w-4 h-4" />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 min-w-0">
                   <h4 className="text-xs font-bold text-slate-900">Live Emoji Reactions</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     React to friends&apos; photos and updates in real-time with instant Socket.io state synchronization across all members.
@@ -264,11 +245,11 @@ export function RichMediaSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
                 <div className="w-9 h-9 rounded-lg bg-[#88E788]/30 border border-[#88E788]/60 text-[#2d8a2d] flex items-center justify-center font-bold shrink-0">
                   <Volume2 className="w-4 h-4" />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 min-w-0">
                   <h4 className="text-xs font-bold text-slate-900">Voice Notes & Files</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Record voice messages or drop PDF/ZIP documents directly into your 1-to-1 or group chat channels.
@@ -278,7 +259,7 @@ export function RichMediaSection() {
             </div>
 
             {/* Sub-badge summary */}
-            <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-medium flex items-center gap-2">
+            <div className="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200/80 text-emerald-900 text-xs font-semibold flex items-center gap-2 shadow-2xs">
               <CheckCircle2 className="w-4 h-4 text-[#2d8a2d] shrink-0" />
               <span>Zero compression loss • WebSocket binary attachment streaming</span>
             </div>

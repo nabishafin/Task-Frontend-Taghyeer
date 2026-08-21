@@ -20,9 +20,10 @@ export function Hero() {
         />
       </div>
 
-      {/* Background ambient lighting & mesh glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#88E788]/20 rounded-full blur-[140px] pointer-events-none animate-pulse duration-1000" />
-      <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#88E788]/15 rounded-full blur-[100px] pointer-events-none" />
+      {/* Ultra Glossy Ambient Mesh Lighting Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#88E788]/25 rounded-full blur-[150px] pointer-events-none animate-pulse duration-1000" />
+      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-emerald-400/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-[#88E788]/15 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70 pointer-events-none" />
@@ -30,12 +31,12 @@ export function Hero() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Centered Header & Compact Headline */}
-        <div className="text-center max-w-2xl mx-auto space-y-3.5">
+        <div className="text-center max-w-2xl mx-auto space-y-4">
           
-          {/* Main Headline */}
+          {/* Main Headline with Glossy Gradient Accent */}
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
             Conversations that{' '}
-            <span className="bg-gradient-to-r from-[#2d8a2d] via-emerald-600 to-[#2d8a2d] bg-clip-text text-transparent underline decoration-[#88E788]/60 underline-offset-4">
+            <span className="bg-gradient-to-r from-[#2d8a2d] via-emerald-600 to-[#2d8a2d] bg-clip-text text-transparent underline decoration-[#88E788] underline-offset-4 drop-shadow-xs">
               never miss a moment.
             </span>
           </h1>
@@ -45,11 +46,11 @@ export function Hero() {
             VibeWire delivers instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io, smart auto-scroll, RTK Query cache streaming, and automatic draft preservation.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-1">
+          {/* Glossy Ultra-Attractive CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
             <Link
               href="/chat"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-extrabold text-slate-900 bg-[#88E788] hover:bg-[#73db73] px-5 py-2.5 rounded-lg shadow-md shadow-[#88E788]/30 transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-slate-950 bg-gradient-to-r from-[#88E788] via-[#7ae67a] to-[#88E788] hover:from-[#7ee47e] hover:to-[#88E788] px-6 py-3 rounded-lg shadow-lg shadow-[#88E788]/40 hover:shadow-xl hover:shadow-[#88E788]/60 transition-all hover:scale-105 active:scale-95 border border-[#88E788]"
             >
               <Sparkles className="w-4 h-4 text-[#2d8a2d]" />
               <span>Launch VibeWire Messenger</span>
@@ -58,57 +59,59 @@ export function Hero() {
 
             <Link
               href="/login"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-4 py-2.5 rounded-lg transition-all shadow-2xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-slate-700 bg-white/90 hover:bg-white border border-slate-200/90 px-5 py-3 rounded-lg transition-all shadow-md backdrop-blur-md hover:scale-102"
             >
               <span>Quick 1-Click Demo Login</span>
             </Link>
           </div>
 
-          {/* Value Badges */}
-          <div className="pt-1 flex flex-wrap items-center justify-center gap-2 text-[10px] font-mono text-slate-600 font-bold">
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200/80 shadow-2xs">
-              <CheckCircle2 className="w-3 h-3 text-[#2d8a2d]" /> Socket.io Bidirectional
+          {/* Glossy Value Badges */}
+          <div className="pt-1 flex flex-wrap items-center justify-center gap-2 text-[10px] font-mono text-slate-700 font-bold">
+            <span className="flex items-center gap-1 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Socket.io Bidirectional
             </span>
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200/80 shadow-2xs">
-              <CheckCircle2 className="w-3 h-3 text-[#2d8a2d]" /> Group Admin Roles
+            <span className="flex items-center gap-1 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Group Admin Roles
             </span>
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200/80 shadow-2xs">
-              <CheckCircle2 className="w-3 h-3 text-[#2d8a2d]" /> Smart Auto-Scroll
+            <span className="flex items-center gap-1 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#2d8a2d]" /> Smart Auto-Scroll
             </span>
           </div>
 
         </div>
 
-        {/* Hero Visual Mockup Container with Floating Cards */}
-        <div className="mt-6 max-w-6xl mx-auto relative">
+        {/* Hero Visual Mockup Container with Floating Glossy Glass Cards */}
+        <div className="mt-7 max-w-6xl mx-auto relative">
           
-          {/* Floating Widget Top-Left */}
-          <div className="hidden md:flex absolute -top-4 -left-4 z-20 items-center gap-2.5 bg-white/95 backdrop-blur-2xl border border-slate-200 p-2.5 px-3 rounded-lg shadow-xl animate-bounce duration-1000">
-            <div className="w-7 h-7 rounded-md bg-[#88E788] text-slate-900 flex items-center justify-center font-extrabold shadow-sm">
+          {/* Floating Glass Widget Top-Left */}
+          <div className="hidden md:flex absolute -top-5 -left-5 z-20 items-center gap-3 bg-white/95 backdrop-blur-2xl border border-[#88E788]/80 p-3 px-4 rounded-xl shadow-2xl shadow-[#88E788]/20 animate-bounce duration-1000">
+            <div className="w-8 h-8 rounded-lg bg-[#88E788] text-slate-900 flex items-center justify-center font-extrabold shadow-md">
               <Zap className="w-4 h-4 text-[#2d8a2d]" />
             </div>
             <div>
-              <p className="text-[11px] font-extrabold text-slate-900">Real-Time Sync Active</p>
-              <p className="text-[9px] text-[#2d8a2d] font-bold flex items-center gap-1">
+              <p className="text-xs font-black text-slate-900">Real-Time Sync Active</p>
+              <p className="text-[10px] text-[#2d8a2d] font-bold flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2d8a2d] animate-pulse" />
                 Socket.io Live Stream
               </p>
             </div>
           </div>
 
-          {/* Floating Widget Bottom-Right */}
-          <div className="hidden md:flex absolute -bottom-4 -right-4 z-20 items-center gap-2.5 bg-white/95 backdrop-blur-2xl border border-slate-200 p-2.5 px-3 rounded-lg shadow-xl">
-            <div className="w-7 h-7 rounded-md bg-[#88E788]/30 border border-[#88E788] text-[#2d8a2d] flex items-center justify-center font-extrabold">
+          {/* Floating Glass Widget Bottom-Right */}
+          <div className="hidden md:flex absolute -bottom-5 -right-5 z-20 items-center gap-3 bg-white/95 backdrop-blur-2xl border border-[#88E788]/80 p-3 px-4 rounded-xl shadow-2xl shadow-[#88E788]/20">
+            <div className="w-8 h-8 rounded-lg bg-[#88E788]/30 border border-[#88E788] text-[#2d8a2d] flex items-center justify-center font-extrabold">
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div>
-              <p className="text-[11px] font-extrabold text-slate-900">100% Unsent Draft Saved</p>
-              <p className="text-[9px] text-slate-500 font-medium">Auto-persisted in Redux memory</p>
+              <p className="text-xs font-black text-slate-900">100% Unsent Draft Saved</p>
+              <p className="text-[10px] text-slate-500 font-medium">Auto-persisted in Redux memory</p>
             </div>
           </div>
 
-          {/* Main App Frame */}
-          <div className="relative rounded-xl bg-slate-950 p-2 shadow-xl shadow-slate-900/30 border border-slate-800">
+          {/* Main Glossy Dark Glass App Frame */}
+          <div className="relative rounded-2xl bg-gradient-to-b from-slate-900/95 via-slate-950 to-slate-950 p-2 sm:p-3 shadow-2xl shadow-[#88E788]/15 border border-slate-700/60 backdrop-blur-2xl overflow-hidden">
+            {/* Top Glossy Reflective Sheen Highlight Line */}
+            <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#88E788]/80 to-transparent" />
             {/* Top Browser Address Bar */}
             <div className="px-4 py-2 bg-slate-900 rounded-t-lg flex items-center justify-between border-b border-slate-800 mb-1.5">
               <div className="flex items-center gap-1.5">
