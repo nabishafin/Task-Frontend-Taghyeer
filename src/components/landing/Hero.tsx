@@ -8,42 +8,38 @@ import { Avatar } from '@/components/ui/Avatar';
 
 export function Hero() {
   return (
-    <section className="relative pt-16 pb-12 md:pt-20 md:pb-12 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80 selection:bg-[#88E788] selection:text-slate-900">
-      {/* Transparent Abstract Tech Waves Background Image Overlay */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-multiply overflow-hidden">
+    <section className="relative w-full max-w-full pt-16 pb-12 md:pt-20 md:pb-12 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80 selection:bg-[#88E788] selection:text-slate-900">
+      {/* 1st Premium Transparent High-Tech Background Waves Overlay */}
+      <div className="absolute inset-0 w-full h-full z-0 opacity-35 pointer-events-none mix-blend-multiply overflow-hidden">
         <Image
           src="/images/hero_transparent_bg.jpg"
           alt="Transparent High-Tech Background Waves"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center w-full h-full"
           priority
         />
       </div>
 
-      {/* Ultra Glossy Ambient Mesh Lighting Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#88E788]/25 rounded-full blur-[150px] pointer-events-none animate-pulse duration-1000" />
-      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-emerald-400/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-[#88E788]/15 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70 pointer-events-none" />
+      {/* Crisp glowing accent ambient light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#88E788]/20 rounded-full blur-[130px] pointer-events-none animate-pulse" />
+      <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-emerald-400/15 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Centered Header & Compact Headline */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           
-          {/* Main Headline with Glossy Gradient Accent */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
-            Conversations that{' '}
-            <span className="bg-gradient-to-r from-[#2d8a2d] via-emerald-600 to-[#2d8a2d] bg-clip-text text-transparent underline decoration-[#88E788] underline-offset-4 drop-shadow-xs">
-              never miss a moment.
+          {/* Main Headline with High-Contrast Sharp Text */}
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+            Real-time conversations that keep your team{' '}
+            <span className="bg-gradient-to-r from-[#2d8a2d] to-emerald-600 bg-clip-text text-transparent underline decoration-[#88E788] underline-offset-6">
+              always connected.
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed font-normal">
-            VibeWire delivers instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io, smart auto-scroll, RTK Query cache streaming, and automatic draft preservation.
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed font-normal">
+            VibeWire delivers instant 1-to-1 direct messaging, multi-member group channels, high-res photo sharing, and zero unsent draft loss powered by sub-10ms Socket.io stream.
           </p>
 
           {/* Glossy Ultra-Attractive CTAs */}

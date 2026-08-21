@@ -16,9 +16,9 @@ import { Footer } from '@/components/landing/Footer';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900 font-sans">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-[#88E788] selection:text-slate-900 font-sans relative">
       <Navbar />
-      <main>
+      <main className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <div id="how-it-works">
           <HowItWorks />

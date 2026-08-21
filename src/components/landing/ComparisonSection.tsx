@@ -60,42 +60,42 @@ export function ComparisonSection() {
           </p>
         </div>
 
-        {/* Minimal Horizontal Table Matrix without Cards */}
-        <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
-          
-          {/* Header Row */}
-          <div className="grid grid-cols-12 py-4 text-xs font-mono font-extrabold uppercase tracking-wider text-slate-500 bg-slate-50/50 px-4 rounded-t-xl">
-            <div className="col-span-4 sm:col-span-5">Feature Metric</div>
-            <div className="col-span-4 sm:col-span-3 text-slate-400">Legacy HTTP Apps</div>
-            <div className="col-span-4 text-[#2d8a2d] font-black">VibeWire Messenger</div>
-          </div>
-
-          {/* Data Rows */}
-          {COMPARISON_ROWS.map((row, idx) => (
-            <div
-              key={idx}
-              className="grid grid-cols-12 py-5 px-4 items-center text-xs sm:text-sm transition-colors hover:bg-slate-50/80"
-            >
-              {/* Feature Name */}
-              <div className="col-span-4 sm:col-span-5 font-bold text-slate-900 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2d8a2d] shrink-0" />
-                <span>{row.feature}</span>
-              </div>
-
-              {/* Legacy Column */}
-              <div className="col-span-4 sm:col-span-3 text-slate-400 font-medium flex items-center gap-2 pr-2">
-                <X className="w-4 h-4 text-rose-400 shrink-0" />
-                <span className="truncate">{row.legacy}</span>
-              </div>
-
-              {/* Pulse Column */}
-              <div className="col-span-4 font-bold text-slate-900 flex items-center gap-2 text-[#2d8a2d]">
-                <Check className="w-4 h-4 text-[#2d8a2d] shrink-0 stroke-[3]" />
-                <span>{row.pulse}</span>
-              </div>
+        {/* Minimal Horizontal Table Matrix with Responsive Mobile Scroll */}
+        <div className="overflow-x-auto -mx-4 sm:mx-0 rounded-xl border border-slate-200 shadow-xs">
+          <div className="min-w-[640px] divide-y divide-slate-200">
+            {/* Header Row */}
+            <div className="grid grid-cols-12 py-4 text-xs font-mono font-extrabold uppercase tracking-wider text-slate-500 bg-slate-50/80 px-4">
+              <div className="col-span-4 sm:col-span-5">Feature Metric</div>
+              <div className="col-span-4 sm:col-span-3 text-slate-400">Legacy HTTP Apps</div>
+              <div className="col-span-4 text-[#2d8a2d] font-black">VibeWire Messenger</div>
             </div>
-          ))}
 
+            {/* Data Rows */}
+            {COMPARISON_ROWS.map((row, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-12 py-4 px-4 items-center text-xs sm:text-sm transition-colors hover:bg-slate-50/80 bg-white"
+              >
+                {/* Feature Name */}
+                <div className="col-span-4 sm:col-span-5 font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2d8a2d] shrink-0" />
+                  <span>{row.feature}</span>
+                </div>
+
+                {/* Legacy Column */}
+                <div className="col-span-4 sm:col-span-3 text-slate-400 font-medium flex items-center gap-2 pr-2">
+                  <X className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span className="truncate">{row.legacy}</span>
+                </div>
+
+                {/* Pulse Column */}
+                <div className="col-span-4 font-bold text-slate-900 flex items-center gap-2 text-[#2d8a2d]">
+                  <Check className="w-4 h-4 text-[#2d8a2d] shrink-0 stroke-[3]" />
+                  <span>{row.pulse}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
