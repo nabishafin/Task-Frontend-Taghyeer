@@ -10,18 +10,18 @@ export function Showcase() {
   const [activeTab, setActiveTab] = useState<'direct' | 'group'>('direct');
 
   return (
-    <section id="showcase" className="py-24 bg-white text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
+    <section id="showcase" className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 relative">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#88E788]/15 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-3 max-w-3xl mx-auto mb-12">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold uppercase tracking-wide shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>High Fidelity Product Showcase</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            Clean & intuitive chat interface.
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Designed for clarity & high speed.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500">
             Switch between Direct and Group conversation modes to see the real UI layout.
@@ -54,15 +54,15 @@ export function Showcase() {
         </div>
 
         {/* Integrated Showcase Device Frame */}
-        <div className="max-w-6xl mx-auto rounded-3xl bg-slate-900 p-2 sm:p-3 shadow-2xl shadow-slate-900/20 border border-slate-800">
+        <div className="max-w-6xl mx-auto rounded-xl bg-slate-900 p-2 sm:p-2.5 shadow-xl shadow-slate-900/20 border border-slate-800">
           {/* Top Address Bar */}
-          <div className="px-5 py-3 bg-slate-900 rounded-t-2xl flex items-center justify-between border-b border-slate-800">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-rose-500" />
-              <span className="w-3 h-3 rounded-full bg-amber-500" />
-              <span className="w-3 h-3 rounded-full bg-emerald-500" />
+          <div className="px-4 py-2 bg-slate-900 rounded-t-lg flex items-center justify-between border-b border-slate-800">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             </div>
-            <div className="px-4 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 font-mono text-[11px] flex items-center gap-2">
+            <div className="px-3 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-400 font-mono text-[10px] flex items-center gap-1.5">
               <span>https://pulse-chat.app/chat</span>
             </div>
             <Link href="/chat" className="text-xs text-[#88E788] hover:underline font-extrabold flex items-center gap-1">
@@ -71,7 +71,7 @@ export function Showcase() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[420px] rounded-b-2xl overflow-hidden bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[400px] rounded-b-lg overflow-hidden bg-white">
             {/* Sidebar Mockup */}
             <div className="hidden md:block md:col-span-4 border-r border-slate-200 p-4 bg-slate-50/70 space-y-3">
               <div className="flex items-center justify-between pb-3 border-b border-slate-200">

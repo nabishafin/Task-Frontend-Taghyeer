@@ -43,17 +43,17 @@ const COMPARISON_ROWS = [
 
 export function ComparisonSection() {
   return (
-    <section className="py-24 bg-white text-slate-900 border-b border-slate-200/80 relative">
+    <section className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3 max-w-3xl mx-auto mb-16">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
             <Activity className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>Why Pulse?</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Built Different. See the Difference.
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Built different. See the difference.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
             Compare traditional REST API polling architectures with Pulse’s event-driven Socket.io streaming pipeline.

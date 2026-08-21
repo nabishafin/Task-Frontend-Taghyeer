@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { cn } from '@/utils/cn';
 
 interface LogoProps {
@@ -16,56 +17,26 @@ export function Logo({
   showText = true,
   className,
 }: LogoProps) {
-  const iconSizes = {
-    sm: 'w-7 h-7 text-xs',
-    md: 'w-9 h-9 text-sm',
-    lg: 'w-11 h-11 text-base',
-    xl: 'w-14 h-14 text-xl',
+  const heights = {
+    sm: 'h-6 sm:h-7',
+    md: 'h-8 sm:h-9',
+    lg: 'h-10 sm:h-11',
+    xl: 'h-12 sm:h-14',
   };
-
-  const textSizes = {
-    sm: 'text-base',
-    md: 'text-xl',
-    lg: 'text-2xl',
-    xl: 'text-3xl',
-  };
-
-  const isDark = variant === 'dark';
 
   return (
-    <div className={cn('inline-flex items-center gap-2.5 group select-none cursor-pointer', className)}>
-      <div
-        className={cn(
-          'relative rounded-2xl flex items-center justify-center font-bold shadow-md transition-all duration-300 group-hover:scale-105 shrink-0 overflow-hidden',
-          iconSizes[size],
-          'bg-gradient-to-br from-[#88E788] to-[#6cd86c] text-slate-900 border border-[#88E788]/60 shadow-[#88E788]/30'
-        )}
-      >
-        {/* Ambient Glow */}
-        <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-        
-        {/* Custom Signal Wave Pulse SVG Icon */}
-        <svg
-          className="w-3/5 h-3/5 fill-current relative z-10 text-slate-900"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z" />
-          <circle cx="12" cy="12" r="3" className="animate-ping opacity-40 fill-slate-900" />
-        </svg>
+    <div className={cn('inline-flex items-center select-none cursor-pointer group', className)}>
+      <div className={cn('relative flex items-center shrink-0', heights[size])}>
+        <Image
+          src="/images/logo.png"
+          alt="VibeWire Logo"
+          width={220}
+          height={70}
+          className={cn('w-auto object-contain transition-transform duration-300 group-hover:scale-105', heights[size])}
+          priority
+        />
       </div>
-
-      {showText && (
-        <span
-          className={cn(
-            'font-black tracking-tight font-sans flex items-center',
-            textSizes[size],
-            isDark ? 'text-white' : 'text-slate-900'
-          )}
-        >
-          Pulse
-          <span className="text-[#2d8a2d] font-extrabold ml-0.5 animate-pulse">.</span>
-        </span>
-      )}
     </div>
   );
 }
+

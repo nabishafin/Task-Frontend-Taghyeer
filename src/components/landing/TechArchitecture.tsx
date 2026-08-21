@@ -68,20 +68,20 @@ export function TechArchitecture() {
   const IconComponent = activeStep.icon;
 
   return (
-    <section id="architecture" className="py-24 bg-slate-900 text-slate-100 border-b border-slate-800 relative overflow-hidden">
+    <section id="architecture" className="py-12 md:py-16 bg-slate-900 text-slate-100 border-b border-slate-800 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#88E788]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3 max-w-3xl mx-auto mb-16">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/40 text-[#88E788] text-xs font-mono font-bold uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5" />
             <span>Under The Hood</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Engineered for High-Performance Messaging.
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            Engineered for high-performance messaging.
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
             Discover how Pulse combines Socket.io, Redux Toolkit Query cache invalidation, and strict state management to deliver instant chat.
@@ -89,10 +89,10 @@ export function TechArchitecture() {
         </div>
 
         {/* Card-Free Split Pipeline Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Interactive Step Selector */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3">
             {ARCH_STEPS.map((step, idx) => {
               const isActive = activeTab === idx;
               const StepIcon = step.icon;
@@ -100,28 +100,28 @@ export function TechArchitecture() {
                 <button
                   key={step.id}
                   onClick={() => setActiveTab(idx)}
-                  className={`w-full text-left p-4 rounded-2xl transition-all flex items-start gap-4 cursor-pointer ${
+                  className={`w-full text-left p-3.5 rounded-xl transition-all flex items-start gap-3.5 cursor-pointer ${
                     isActive
-                      ? 'bg-slate-800/90 border-l-4 border-[#88E788] text-white shadow-xl'
+                      ? 'bg-slate-800/90 border-l-4 border-[#88E788] text-white shadow-lg'
                       : 'bg-transparent border-l-2 border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
                   }`}
                 >
                   <div
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 font-bold ${
+                    className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 font-bold ${
                       isActive ? 'bg-[#88E788] text-slate-900' : 'bg-slate-800 text-slate-400'
                     }`}
                   >
-                    <StepIcon className="w-5 h-5" />
+                    <StepIcon className="w-4 h-4" />
                   </div>
 
-                  <div className="space-y-1 min-w-0 flex-1">
+                  <div className="space-y-0.5 min-w-0 flex-1">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-[#88E788] uppercase tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-[#88E788] uppercase tracking-wider">
                         {step.badge}
                       </span>
                       <span className="text-[10px] font-mono text-slate-500">{step.metrics}</span>
                     </div>
-                    <h3 className="text-sm font-extrabold text-white truncate">{step.title}</h3>
+                    <h3 className="text-xs font-extrabold text-white truncate">{step.title}</h3>
                   </div>
                 </button>
               );
@@ -129,8 +129,8 @@ export function TechArchitecture() {
           </div>
 
           {/* Right Column: Code Architecture Display */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-5 sm:p-6 space-y-4 shadow-xl">
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#88E788]/20 border border-[#88E788]/50 flex items-center justify-center text-[#88E788]">

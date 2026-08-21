@@ -30,18 +30,18 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 bg-white text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
       {/* Background Subtle Accent Light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#88E788]/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-3 max-w-3xl mx-auto mb-20">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold tracking-wide uppercase shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-[#2d8a2d]" />
             <span>Simple 3-Step Process</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            How Pulse Chat Works
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Built for speed in 3 simple steps.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
             Designed for intuitive onboarding and effortless team communication in three simple steps.

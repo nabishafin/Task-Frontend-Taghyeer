@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function CTA() {
   return (
-    <section className="py-24 bg-white text-slate-900 border-b border-slate-200/80 text-center relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 text-center relative overflow-hidden">
       {/* Glow radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#88E788]/20 rounded-full blur-[140px] pointer-events-none" />
 
@@ -16,7 +16,7 @@ export function CTA() {
           <Logo size="xl" variant="light" />
         </div>
 
-        <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
           Ready to experience{' '}
           <span className="text-[#2d8a2d] underline decoration-[#88E788] underline-offset-8">
             Pulse

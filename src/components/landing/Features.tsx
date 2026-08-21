@@ -53,18 +53,18 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-slate-50/70 text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
+    <section id="features" className="py-12 md:py-16 bg-slate-50/70 text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
       {/* Background Subtle Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-3 max-w-3xl mx-auto mb-16">
+        <div className="text-center space-y-3 max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#88E788]/20 border border-[#88E788]/50 text-slate-900 text-xs font-extrabold tracking-wide uppercase shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#2d8a2d]" />
             <span>Built for Modern Real-Time Web</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            Everything required for modern communication.
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Engineered for real-time collaboration.
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
             Architected with Next.js 16, RTK Query, Socket.io, and Tailwind CSS for peak performance and strict type safety.

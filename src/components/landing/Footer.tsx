@@ -13,7 +13,7 @@ export function Footer() {
       <div className="absolute bottom-0 right-10 w-[300px] h-[250px] bg-[#88E788]/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Multi-Column Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
           
           {/* Column 1: Brand & Overview (Spans 2 columns on lg) */}
