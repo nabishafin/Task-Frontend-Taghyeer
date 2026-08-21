@@ -31,11 +31,11 @@ export function MessageHeader() {
     : currentConv.participant?.phone || '';
 
   return (
-    <div className="p-3.5 px-4 border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md flex items-center justify-between gap-3 shrink-0">
+    <div className="p-3.5 px-4 border-b border-slate-200 bg-white flex items-center justify-between gap-3 shrink-0">
       <div className="flex items-center gap-3 min-w-0">
         <button
           onClick={() => dispatch(setMobileView('list'))}
-          className="md:hidden p-2 -ml-1 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+          className="md:hidden p-1.5 -ml-1 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
           title="Back to conversations"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -50,7 +50,7 @@ export function MessageHeader() {
         />
 
         <div className="min-w-0 flex-1">
-          <h2 className="text-sm font-bold text-slate-100 truncate flex items-center gap-2">
+          <h2 className="text-sm font-bold text-slate-900 truncate flex items-center gap-2">
             <span className="truncate">{title}</span>
             {isGroup && (
               <Badge variant="accent" size="sm">
@@ -58,7 +58,7 @@ export function MessageHeader() {
               </Badge>
             )}
           </h2>
-          <p className="text-xs text-slate-400 truncate">{subtitle}</p>
+          <p className="text-xs text-slate-500 truncate">{subtitle}</p>
         </div>
       </div>
 
@@ -66,10 +66,10 @@ export function MessageHeader() {
         {isGroup && (
           <button
             onClick={() => dispatch(setIsGroupManageOpen(true))}
-            className="p-2 rounded-xl text-slate-400 hover:text-indigo-400 hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-500 hover:text-[#2d8a2d] hover:bg-[#88E788]/20 transition-colors"
             title="Group Settings"
           >
-            <Settings className="w-5 h-5" />
+            <Settings className="w-4 h-4" />
           </button>
         )}
       </div>

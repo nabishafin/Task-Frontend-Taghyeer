@@ -18,10 +18,10 @@ export function ChatLayout() {
   const activeId = useSelector((state: RootState) => state.chat.activeConversationId);
 
   return (
-    <div className="h-screen w-screen bg-slate-950 text-slate-100 flex overflow-hidden selection:bg-indigo-500 selection:text-white">
+    <div className="h-screen w-screen bg-slate-100 text-slate-900 flex overflow-hidden selection:bg-[#88E788] selection:text-slate-900">
       <div
         className={cn(
-          'w-full md:w-80 lg:w-96 border-r border-slate-800/80 flex flex-col h-full shrink-0 bg-slate-900/40 backdrop-blur-xl transition-all duration-300',
+          'w-full md:w-80 lg:w-96 border-r border-slate-200 flex flex-col h-full shrink-0 bg-white transition-all duration-300',
           mobileView === 'chat' && activeId ? 'hidden md:flex' : 'flex'
         )}
       >
@@ -33,7 +33,7 @@ export function ChatLayout() {
 
       <div
         className={cn(
-          'flex-1 flex flex-col h-full overflow-hidden bg-slate-950/60 relative',
+          'flex-1 flex flex-col h-full overflow-hidden bg-white relative',
           mobileView === 'list' && !activeId ? 'hidden md:flex' : 'flex'
         )}
       >
@@ -44,15 +44,15 @@ export function ChatLayout() {
             <MessageComposer key={activeId} />
           </>
         ) : (
-          <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-500 space-y-3">
-            <div className="w-16 h-16 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shadow-xl">
+          <div className="h-full flex flex-col items-center justify-center p-6 text-center text-slate-400 space-y-3 bg-slate-50/50">
+            <div className="w-16 h-16 rounded-3xl bg-white border border-slate-200 flex items-center justify-center text-[#2d8a2d] shadow-xs">
               <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                 <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z" />
               </svg>
             </div>
-            <div className="space-y-1">
-              <h3 className="text-base font-bold text-slate-200">No chat selected</h3>
-              <p className="text-xs text-slate-400 max-w-xs">
+            <div className="space-y-0.5">
+              <h3 className="text-sm font-bold text-slate-800">No chat selected</h3>
+              <p className="text-xs text-slate-500 max-w-xs">
                 Select a conversation from the sidebar or start a new direct chat to begin messaging.
               </p>
             </div>

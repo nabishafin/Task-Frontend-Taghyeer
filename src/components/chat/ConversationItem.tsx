@@ -47,10 +47,10 @@ export function ConversationItem({
     <button
       onClick={onClick}
       className={cn(
-        'w-full flex items-center gap-3 p-3.5 rounded-2xl text-left transition-all duration-150 border',
+        'w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all border',
         isActive
-          ? 'bg-indigo-600/15 border-indigo-500/30 text-white shadow-md'
-          : 'bg-slate-900/40 border-transparent hover:bg-slate-800/60 hover:border-slate-800 text-slate-300'
+          ? 'bg-[#88E788]/25 border-[#88E788]/60 text-slate-900 font-semibold shadow-2xs'
+          : 'bg-white border-transparent hover:bg-slate-100/80 text-slate-800'
       )}
     >
       <Avatar
@@ -61,17 +61,17 @@ export function ConversationItem({
       />
 
       <div className="flex-1 min-w-0">
-        <div className="flex justify-between items-center mb-1">
-          <h3 className="text-sm font-semibold truncate text-slate-100 flex items-center gap-1.5">
+        <div className="flex justify-between items-center mb-0.5">
+          <h3 className="text-xs font-bold truncate text-slate-900 flex items-center gap-1.5">
             <span className="truncate">{displayName}</span>
             {isGroup ? (
-              <Badge variant="accent" size="sm" className="shrink-0">
+              <Badge variant="accent" size="sm" className="shrink-0 text-[9px] py-0 px-1">
                 <Users className="w-2.5 h-2.5 mr-0.5" /> Group
               </Badge>
             ) : null}
           </h3>
           {conversation.updatedAt && (
-            <span className="text-[11px] text-slate-400 shrink-0 ml-2">
+            <span className="text-[10px] text-slate-400 shrink-0 ml-2">
               {formatConversationTime(conversation.updatedAt)}
             </span>
           )}
@@ -80,15 +80,15 @@ export function ConversationItem({
         <div className="flex justify-between items-center">
           <p
             className={cn(
-              'text-xs truncate max-w-[180px] sm:max-w-[200px]',
-              draftText ? 'text-amber-400 font-medium italic' : unreadCount > 0 ? 'text-slate-100 font-semibold' : 'text-slate-400'
+              'text-xs truncate max-w-[180px]',
+              draftText ? 'text-amber-600 font-medium italic' : unreadCount > 0 ? 'text-slate-900 font-bold' : 'text-slate-500'
             )}
           >
             {lastMsgSender && !draftText ? `${lastMsgSender}: ${lastMsgText}` : lastMsgText}
           </p>
 
           {unreadCount > 0 && (
-            <span className="shrink-0 ml-2 bg-indigo-500 text-white text-[11px] font-bold px-2 py-0.5 rounded-full shadow-sm shadow-indigo-500/50">
+            <span className="shrink-0 ml-2 bg-[#88E788] text-slate-900 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-[#6cd86c]">
               {unreadCount > 99 ? '99+' : unreadCount}
             </span>
           )}

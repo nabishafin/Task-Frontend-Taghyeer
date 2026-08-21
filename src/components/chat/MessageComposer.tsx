@@ -69,23 +69,23 @@ export function MessageComposer() {
   const canSend = Boolean(text.trim()) && !isLoading;
 
   return (
-    <div className="p-3 sm:p-4 border-t border-slate-800/80 bg-slate-900/80 backdrop-blur-md shrink-0 space-y-2">
+    <div className="p-3 sm:p-4 border-t border-slate-200 bg-white shrink-0 space-y-2">
       {sendError && (
-        <div className="flex items-center justify-between p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs">
+        <div className="flex items-center justify-between p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
           <div className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
+            <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
             <span>{sendError}</span>
           </div>
           <button
             onClick={handleSend}
-            className="text-[11px] font-bold text-rose-400 hover:text-white underline ml-2"
+            className="text-[11px] font-bold text-rose-600 hover:underline ml-2"
           >
             Retry
           </button>
         </div>
       )}
 
-      <div className="flex items-end gap-2 bg-slate-950/80 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-indigo-500/40 focus-within:border-indigo-500/60 transition-all">
+      <div className="flex items-end gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-[#88E788] focus-within:border-[#88E788] transition-all">
         <textarea
           ref={textareaRef}
           rows={1}
@@ -93,19 +93,19 @@ export function MessageComposer() {
           onChange={handleTextChange}
           onKeyDown={handleKeyDown}
           placeholder="Write a message... (Shift + Enter for new line)"
-          className="flex-1 bg-transparent px-3 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none resize-none max-h-32 custom-scrollbar"
+          className="flex-1 bg-transparent px-3 py-1.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none resize-none max-h-32 custom-scrollbar"
         />
 
         <button
           onClick={handleSend}
           disabled={!canSend}
           title="Send message (Enter)"
-          className="p-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white disabled:opacity-40 disabled:hover:bg-indigo-600 disabled:cursor-not-allowed transition-all shadow-md shadow-indigo-600/20 shrink-0"
+          className="p-2 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 font-bold disabled:opacity-40 disabled:hover:bg-[#88E788] disabled:cursor-not-allowed transition-all shadow-2xs shrink-0"
         >
           {isLoading ? (
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="w-4 h-4 animate-spin text-slate-900" />
           ) : (
-            <Send className="w-5 h-5" />
+            <Send className="w-4 h-4" />
           )}
         </button>
       </div>

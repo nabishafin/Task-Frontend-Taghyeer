@@ -19,28 +19,28 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 py-3.5 shadow-2xl shadow-slate-950/50'
+          ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 shadow-xs'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="w-9 h-9 rounded-xl bg-[#88E788] flex items-center justify-center text-slate-900 shadow-2xs group-hover:scale-105 transition-transform font-bold">
             <MessageSquare className="w-5 h-5" />
           </div>
-          <span className="text-xl font-extrabold text-white tracking-tight">
-            Pulse<span className="text-indigo-400">.</span>
+          <span className="text-lg font-extrabold text-slate-900 tracking-tight">
+            Pulse<span className="text-[#2d8a2d]">.</span>
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#features" className="hover:text-white transition-colors">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-bold text-slate-600">
+          <a href="#features" className="hover:text-slate-900 transition-colors">
             Features
           </a>
-          <a href="#showcase" className="hover:text-white transition-colors">
+          <a href="#showcase" className="hover:text-slate-900 transition-colors">
             Product Showcase
           </a>
-          <a href="#interactive" className="hover:text-white transition-colors">
+          <a href="#interactive" className="hover:text-slate-900 transition-colors">
             Live Preview
           </a>
         </nav>
@@ -48,7 +48,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/login"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-xl shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transition-all"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 bg-[#88E788] hover:bg-[#73db73] px-4 py-2 rounded-xl shadow-2xs transition-all"
           >
             <span>Launch App</span>
             <ArrowRight className="w-4 h-4" />

@@ -17,10 +17,10 @@ export function Badge({
   className,
 }: BadgeProps) {
   const variantClasses = {
-    primary: 'bg-indigo-600/20 text-indigo-400 border-indigo-500/30',
-    secondary: 'bg-slate-800 text-slate-300 border-slate-700',
-    accent: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
-    outline: 'border-slate-700 text-slate-400',
+    primary: 'bg-[#88E788]/25 text-slate-900 border-[#88E788]/50',
+    secondary: 'bg-slate-100 text-slate-700 border-slate-200',
+    accent: 'bg-[#88E788] text-slate-900 border-[#6cd86c] font-bold',
+    outline: 'border-slate-300 text-slate-600',
   };
 
   const sizeClasses = {
@@ -31,7 +31,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full border tracking-wide uppercase',
+        'inline-flex items-center rounded-md border tracking-wide uppercase',
         variantClasses[variant],
         sizeClasses[size],
         className

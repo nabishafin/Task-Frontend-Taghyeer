@@ -7,7 +7,7 @@ import { useLoginMutation } from '@/redux/apiSlice';
 import { setCredentials } from '@/redux/authSlice';
 import { RootState } from '@/redux/store';
 import { ApiError } from '@/types/chat';
-import { Phone, User as UserIcon, MessageSquare, ArrowRight, Loader2, AlertCircle, Sparkles } from 'lucide-react';
+import { Phone, User as UserIcon, MessageSquare, ArrowRight, Loader2, AlertCircle } from 'lucide-react';
 
 export function LoginForm() {
   const router = useRouter();
@@ -62,38 +62,37 @@ export function LoginForm() {
     (error ? 'Network error. Please try again.' : null);
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4 relative overflow-hidden selection:bg-indigo-500 selection:text-white">
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="w-full max-w-md space-y-8 relative z-10">
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 text-white shadow-xl shadow-indigo-500/25 mb-2">
-            <MessageSquare className="w-8 h-8" />
+    <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4 selection:bg-[#88E788] selection:text-slate-900">
+      <div className="w-full max-w-md space-y-6">
+        {/* Header Branding */}
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#88E788] text-slate-900 shadow-md mb-1">
+            <MessageSquare className="w-7 h-7" />
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-white flex items-center justify-center gap-2">
-            Welcome to <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Pulse</span>
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">
+            Sign in to <span className="text-[#2d8a2d]">Pulse</span>
           </h1>
-          <p className="text-sm text-slate-400">
-            Conversations that never miss a moment. Enter your phone number & name to get started.
+          <p className="text-xs text-slate-500">
+            Enter your phone number and name to access your chats.
           </p>
         </div>
 
-        <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-8 shadow-2xl space-y-6">
+        {/* Login Card */}
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
           {errorMessage && (
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs animate-in fade-in duration-200">
-              <AlertCircle className="w-5 h-5 shrink-0 text-rose-400 mt-0.5" />
-              <div className="leading-relaxed">{errorMessage}</div>
+            <div className="flex items-start gap-3 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-500 mt-0.5" />
+              <div className="leading-relaxed font-medium">{errorMessage}</div>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="phone" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label htmlFor="phone" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Phone Number
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                   <Phone className="w-4 h-4" />
                 </div>
                 <input
@@ -102,18 +101,18 @@ export function LoginForm() {
                   placeholder="+15551234567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-slate-950/70 border border-slate-800 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all"
                   required
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="name" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label htmlFor="name" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                 Full Name
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                   <UserIcon className="w-4 h-4" />
                 </div>
                 <input
@@ -122,7 +121,7 @@ export function LoginForm() {
                   placeholder="Ada Lovelace"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-950/70 border border-slate-800 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#88E788] focus:border-[#88E788] transition-all"
                   required
                 />
               </div>
@@ -131,30 +130,25 @@ export function LoginForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full relative group overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 p-[1px] font-semibold text-white shadow-lg shadow-indigo-600/25 transition-all hover:shadow-indigo-600/40 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#88E788] hover:bg-[#73db73] text-slate-900 px-4 py-3 font-bold text-sm shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <div className="flex items-center justify-center gap-2 rounded-[11px] bg-slate-950 px-4 py-3.5 transition-all group-hover:bg-opacity-0">
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin text-white" />
-                    <span>Signing in...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Continue to Pulse</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </>
-                )}
-              </div>
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin text-slate-900" />
+                  <span>Signing in...</span>
+                </>
+              ) : (
+                <>
+                  <span>Continue</span>
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
             </button>
           </form>
 
-          <div className="text-center pt-2">
-            <span className="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-slate-800/40 px-3 py-1.5 rounded-full border border-slate-800">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-              New phone numbers register automatically
-            </span>
-          </div>
+          <p className="text-[11px] text-center text-slate-500 pt-1">
+            New phone numbers are registered automatically.
+          </p>
         </div>
       </div>
     </div>

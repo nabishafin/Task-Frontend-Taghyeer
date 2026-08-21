@@ -11,7 +11,7 @@ export function Skeleton({ className }: SkeletonProps) {
   return (
     <div
       className={cn(
-        'animate-pulse rounded-lg bg-slate-800/60 border border-slate-800/40',
+        'animate-pulse rounded-lg bg-slate-200/80 border border-slate-200/40',
         className
       )}
     />
@@ -38,7 +38,7 @@ export function MessageSkeleton({ isSelf = false }: { isSelf?: boolean }) {
     <div className={cn('flex items-end gap-2 my-3', isSelf ? 'justify-end' : 'justify-start')}>
       {!isSelf && <Skeleton className="w-8 h-8 rounded-full shrink-0" />}
       <div className="space-y-1 max-w-[70%]">
-        <Skeleton className={cn('h-10 rounded-2xl', isSelf ? 'w-48 rounded-br-sm' : 'w-56 rounded-bl-sm')} />
+        <Skeleton className={cn('h-10 rounded-2xl', isSelf ? 'w-48 rounded-br-xs' : 'w-56 rounded-bl-xs')} />
       </div>
     </div>
   );

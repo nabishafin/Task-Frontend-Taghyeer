@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { cn } from '@/utils/cn';
-import { getInitials, getAvatarGradient } from '@/utils/formatters';
+import { getInitials, getAvatarColor } from '@/utils/formatters';
 
 interface AvatarProps {
   name?: string;
@@ -22,17 +22,17 @@ export function Avatar({
   className,
 }: AvatarProps) {
   const initials = getInitials(name);
-  const gradientClass = getAvatarGradient(seed || name);
+  const colorClass = getAvatarColor(seed || name);
 
   const sizeClasses = {
-    sm: 'w-8 h-8 text-xs',
-    md: 'w-10 h-10 text-sm',
-    lg: 'w-12 h-12 text-base',
-    xl: 'w-16 h-16 text-xl',
+    sm: 'w-8 h-8 text-xs font-semibold',
+    md: 'w-10 h-10 text-sm font-bold',
+    lg: 'w-12 h-12 text-base font-bold',
+    xl: 'w-16 h-16 text-xl font-extrabold',
   };
 
   const badgeSizeClasses = {
-    sm: 'w-2.5 h-2.5 bottom-0 right-0 border-1.5',
+    sm: 'w-2.5 h-2.5 bottom-0 right-0 border-2',
     md: 'w-3 h-3 bottom-0 right-0 border-2',
     lg: 'w-3.5 h-3.5 bottom-0.5 right-0.5 border-2',
     xl: 'w-4 h-4 bottom-1 right-1 border-2',
@@ -42,8 +42,8 @@ export function Avatar({
     <div className="relative inline-block shrink-0">
       <div
         className={cn(
-          'rounded-full flex items-center justify-center font-bold text-white shadow-sm transition-transform hover:scale-105 bg-gradient-to-tr',
-          gradientClass,
+          'rounded-full flex items-center justify-center shadow-xs border border-slate-200/80 transition-transform hover:scale-105',
+          colorClass,
           sizeClasses[size],
           className
         )}
@@ -59,9 +59,9 @@ export function Avatar({
       {typeof isOnline === 'boolean' && (
         <span
           className={cn(
-            'absolute rounded-full border-slate-900',
+            'absolute rounded-full border-white',
             badgeSizeClasses[size],
-            isOnline ? 'bg-emerald-500 shadow-emerald-500/50 shadow-sm' : 'bg-slate-500'
+            isOnline ? 'bg-[#2d8a2d]' : 'bg-slate-400'
           )}
           title={isOnline ? 'Online' : 'Offline'}
         />

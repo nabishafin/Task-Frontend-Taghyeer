@@ -7,25 +7,23 @@ export function getInitials(name?: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-const GRADIENTS = [
-  'from-indigo-500 to-purple-600',
-  'from-blue-500 to-cyan-500',
-  'from-emerald-500 to-teal-600',
-  'from-rose-500 to-pink-600',
-  'from-amber-500 to-orange-600',
-  'from-violet-500 to-fuchsia-600',
-  'from-sky-500 to-indigo-600',
-  'from-teal-500 to-emerald-600',
+const AVATAR_COLORS = [
+  'bg-[#88E788] text-slate-900',
+  'bg-emerald-600 text-white',
+  'bg-teal-600 text-white',
+  'bg-slate-700 text-white',
+  'bg-[#6cd86c] text-slate-900',
+  'bg-emerald-700 text-white',
 ];
 
-export function getAvatarGradient(seed?: string): string {
-  if (!seed) return GRADIENTS[0];
+export function getAvatarColor(seed?: string): string {
+  if (!seed) return AVATAR_COLORS[0];
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
     hash = seed.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const index = Math.abs(hash) % GRADIENTS.length;
-  return GRADIENTS[index];
+  const index = Math.abs(hash) % AVATAR_COLORS.length;
+  return AVATAR_COLORS[index];
 }
 
 export function formatMessageTime(dateStr?: string): string {

@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --accent-green: #88E788;
+  --accent-green-hover: #73db73;
+  --accent-green-dark: #2d8a2d;
+  --accent-green-light: #f0fdf0;
+  --surface-light: #f8fafc;
+  --border-light: #e2e8f0;
 }
 
 body {
@@ -12,18 +18,18 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar Styling */
+/* Custom Scrollbar Styling for Light Theme */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.5);
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.6);
+  background: #88E788;
 }
