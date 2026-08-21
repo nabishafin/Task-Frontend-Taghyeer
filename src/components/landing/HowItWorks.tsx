@@ -30,7 +30,7 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
+    <section id="how-it-works" className="py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
       {/* Background Subtle Accent Light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#88E788]/10 blur-[120px] pointer-events-none" />
 

@@ -20,9 +20,7 @@ export default function LandingPage() {
       <Navbar />
       <main className="w-full max-w-full overflow-x-hidden">
         <Hero />
-        <div id="how-it-works">
-          <HowItWorks />
-        </div>
+        <HowItWorks />
         <Features />
         <Showcase />
         <RichMediaSection />

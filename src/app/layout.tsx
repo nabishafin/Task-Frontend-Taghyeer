@@ -16,9 +16,52 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'VibeWire — Real-Time Chat Application',
+  title: 'VibeWire — Real-Time Instant Messenger & Group Collaboration',
   description:
-    'Real-time 1-to-1 and group chat application built with Next.js 16, Redux Toolkit, and Socket.io.',
+    'VibeWire delivers instant 1-to-1 direct messaging, multi-member team group chats, high-res photo sharing, and zero unsent draft loss powered by Socket.io and Next.js 16.',
+  keywords: [
+    'VibeWire',
+    'real-time chat application',
+    'Socket.io messenger',
+    'group chat app',
+    'Next.js 16 chat',
+    'Redux Toolkit Query',
+    'instant messaging app',
+  ],
+  authors: [{ name: 'VibeWire Team' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'VibeWire — Real-Time Instant Messenger & Group Collaboration',
+    description:
+      'Instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io with zero unsent draft loss.',
+    url: 'https://vibewire.app',
+    siteName: 'VibeWire',
+    images: [
+      {
+        url: '/favicon.svg',
+        width: 512,
+        height: 512,
+        alt: 'VibeWire V Icon',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VibeWire — Real-Time Instant Messenger',
+    description:
+      'Instant 1-to-1 direct messaging and multi-member team group chats powered by Socket.io.',
+    images: ['/favicon.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
